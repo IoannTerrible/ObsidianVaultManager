@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.AttentionView"
+             x:DataType="vm:AttentionViewModel">
+  <UserControl.Resources>
+    <DataTemplate x:Key="RowTemplate" x:DataType="vm:AttentionRowVm">
+      <Border Classes="row">
+        <StackPanel>
+          <Grid ColumnDefinitions="*,Auto" Height="34">
+            <Button Theme="{StaticResource RowButton}" Command="{Binding ToggleCommand}">
+              <Grid ColumnDefinitions="18,*" Margin="0,0,8,0">
+                <c:StateGlyph Kind="{Binding Glyph}" HorizontalAlignment="Left" />
+                <c:SegmentedText Grid.Column="1" Segments="{Binding Line}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+              </Grid>
+            </Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center" Margin="8,0,0,0">
+              <Button Classes="tight" Content="{Binding Primary.Text}" Command="{Binding Primary.Command}" IsVisible="{Binding Primary.IsVisible}" IsEnabled="{Binding Primary.IsEnabled}" />
+              <StackPanel Orientation="Horizontal" Spacing="5" IsVisible="{Binding IsWaiting}" VerticalAlignment="Center">
+                <c:StateGlyph Kind="Waiting" />
+                <TextBlock Classes="small soft" Text="{l:T Status_Waiting}" VerticalAlignment="Center" />
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+          <StackPanel IsVisible="{Binding IsExpanded}" Margin="18,0,0,8" Spacing="4">
+            <c:SegmentedText Classes="small soft" Segments="{Binding How}" TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <Button Classes="tight" Content="{Binding Secondary.Text}" Command="{Binding Secondary.Command}" IsVisible="{Binding Secondary.IsVisible}" />
+              <Button Classes="tight" Content="{Binding Keep.Text}" Command="{Binding Keep.Command}" IsVisible="{Binding Keep.IsVisible}" />
+            </StackPanel>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <ScrollViewer Name="Scroller" Background="{DynamicResource Brush.Well}">
+    <StackPanel Margin="16,6,16,12">
+      <ItemsControl ItemsSource="{Binding Rows}" ItemTemplate="{StaticResource RowTemplate}" />
+
+      <StackPanel Orientation="Horizontal" Spacing="6" Margin="0,12,0,0" IsVisible="{Binding HasFooter}">
+        <Button Theme="{StaticResource LinkButton}" Content="{l:T Head_AllPlugins}" Command="{Binding ShowAllPluginsCommand}" />
+        <TextBlock Classes="small soft" Text="·" IsVisible="{Binding HasIgnored}" VerticalAlignment="Center" />
+        <Button Theme="{StaticResource LinkButton}" Content="{Binding IgnoredLink}" Command="{Binding ToggleIgnoredCommand}" IsVisible="{Binding HasIgnored}" />
+      </StackPanel>
+
+      <ItemsControl ItemsSource="{Binding IgnoredRows}" ItemTemplate="{StaticResource RowTemplate}" IsVisible="{Binding IgnoredVisible}" Margin="0,8,0,0" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

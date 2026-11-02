@@ -1,0 +1,12 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="VaultManager.App.Views.MainWindow"
+        Title="Vault Manager"
+        Icon="avares://VaultManager/Assets/vault-manager.ico"
+        Width="1180" Height="780" MinWidth="1040" MinHeight="640"
+        WindowStartupLocation="CenterScreen"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        BorderBrush="{DynamicResource Brush.Edge}"
+        BorderThickness="1" />

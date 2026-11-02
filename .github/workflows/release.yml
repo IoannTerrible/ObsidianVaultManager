@@ -22,7 +22,7 @@ jobs:
   release:
     name: Publish self-contained win-x64 single-file exe
     runs-on: windows-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -32,8 +32,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 10.0.x
-          cache: true
-          cache-dependency-path: ObsidianScanner/ObsidianScanner.csproj
 
       - name: Resolve version
         id: ver
@@ -44,13 +42,25 @@ jobs:
           } else {
             $version = "${{ github.ref_name }}".TrimStart('v')
           }
+          $fileVersion = (Get-Content VERSION -Raw).Trim()
+          if ($version -ne $fileVersion) {
+            Write-Error "Tag version $version does not match VERSION file $fileVersion"
+            exit 1
+          }
           "version=$version" >> $env:GITHUB_OUTPUT
           "tag=v$version" >> $env:GITHUB_OUTPUT
           Write-Host "Resolved version: $version"
 
+      - name: Test
+        run: >
+          dotnet test tests/VaultManager.Tests/VaultManager.Tests.csproj
+          -c Release
+          -nologo
+          -v:minimal
+
       - name: Publish (net10.0, win-x64, single-file, self-contained)
         run: >
-          dotnet publish ObsidianScanner/ObsidianScanner.csproj
+          dotnet publish src/VaultManager.App/VaultManager.App.csproj
           -c Release
           -f net10.0
           -r win-x64
@@ -64,12 +74,17 @@ jobs:
           -v:minimal
           -o publish
 
+      - name: Smoke test the exe
+        shell: pwsh
+        run: |
+          $p = Start-Process publish/VaultManager.exe -ArgumentList "--smoke" -Wait -PassThru
+          if ($p.ExitCode -ne 0) { exit $p.ExitCode }
+
       - name: Rename artifact
         shell: pwsh
         run: |
           $version = "${{ steps.ver.outputs.version }}"
-          $target = "publish/ObsidianVaultManager-v$version-win-x64.exe"
-          Move-Item "publish/ObsidianScanner.exe" $target
+          Move-Item "publish/VaultManager.exe" "publish/VaultManager-v$version-win-x64.exe"
           Get-ChildItem publish
 
       - name: Create GitHub Release
@@ -77,7 +92,7 @@ jobs:
         with:
           tag_name: ${{ steps.ver.outputs.tag }}
           name: ${{ steps.ver.outputs.tag }}
-          files: publish/ObsidianVaultManager-v*-win-x64.exe
+          files: publish/VaultManager-v*-win-x64.exe
           generate_release_notes: true
           draft: false
           prerelease: false

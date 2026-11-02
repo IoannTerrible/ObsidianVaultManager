@@ -1,0 +1,71 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.VaultPageView"
+             x:DataType="vm:VaultPageViewModel">
+  <UserControl.Resources>
+    <DataTemplate x:Key="RowTemplate" x:DataType="vm:VaultPluginRowVm">
+      <Border Classes="row">
+        <StackPanel>
+          <Grid ColumnDefinitions="*,Auto" Height="34">
+            <Button Theme="{StaticResource RowButton}" Command="{Binding ExpandCommand}">
+              <Grid ColumnDefinitions="18,*,Auto" Margin="0,0,8,0">
+                <c:StateGlyph Kind="{Binding Glyph}" HorizontalAlignment="Left" />
+                <TextBlock Grid.Column="1" Text="{Binding Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                <TextBlock Grid.Column="2" Classes="value soft" Text="{Binding Version}" VerticalAlignment="Center" Margin="12,0,0,0" />
+              </Grid>
+            </Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center" Margin="8,0,0,0">
+              <StackPanel Orientation="Horizontal" Spacing="5" IsVisible="{Binding IsWaiting}" VerticalAlignment="Center">
+                <c:StateGlyph Kind="Waiting" />
+                <TextBlock Classes="small soft" Text="{l:T Status_Waiting}" VerticalAlignment="Center" />
+              </StackPanel>
+              <Button Classes="tight" Content="{Binding Update.Text}" Command="{Binding Update.Command}" IsVisible="{Binding Update.IsVisible}" />
+            </StackPanel>
+          </Grid>
+          <StackPanel IsVisible="{Binding IsExpanded}" Margin="18,0,0,8" Spacing="4">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <TextBlock Classes="small soft" Text="{Binding State}" VerticalAlignment="Center" />
+              <TextBlock Classes="value" Text="{Binding Online}" IsVisible="{Binding HasOnline}" VerticalAlignment="Center" />
+              <Border Classes="badge" IsVisible="{Binding NotInCatalog}">
+                <TextBlock Classes="small soft" Text="{l:T Badge_NotInCatalog}" />
+              </Border>
+            </StackPanel>
+            <TextBlock Classes="small dim" Text="{Binding How}" IsVisible="{Binding HasHow}" TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal" Spacing="6">
+              <Button Classes="tight" Content="{Binding Toggle.Text}" Command="{Binding Toggle.Command}" IsVisible="{Binding Toggle.IsVisible}" IsEnabled="{Binding Toggle.IsEnabled}" />
+              <Button Classes="tight" Content="{Binding Catalog.Text}" Command="{Binding Catalog.Command}" IsVisible="{Binding Catalog.IsVisible}" />
+            </StackPanel>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <ScrollViewer Background="{DynamicResource Brush.Well}">
+    <StackPanel Margin="16,6,16,12">
+      <TextBlock Classes="soft" Classes.match="{Binding ProfileComplete}" Text="{Binding ProfileLine}" IsVisible="{Binding HasProfileLine}" Margin="0,6" />
+
+      <ItemsControl ItemsSource="{Binding Banners}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate x:DataType="vm:VaultBannerVm">
+            <Border Classes="row" Padding="0,6">
+              <Grid ColumnDefinitions="18,*" RowDefinitions="Auto,Auto">
+                <c:StateGlyph Kind="{Binding Glyph}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" />
+                <TextBlock Grid.Column="1" Classes="semi" Text="{Binding Title}" TextWrapping="Wrap" />
+                <TextBlock Grid.Column="1" Grid.Row="1" Classes="small dim" Text="{Binding How}" TextWrapping="Wrap" />
+              </Grid>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <ItemsControl ItemsSource="{Binding OlderRows}" ItemTemplate="{StaticResource RowTemplate}" />
+      <ItemsControl ItemsSource="{Binding PluginRows}" ItemTemplate="{StaticResource RowTemplate}" />
+
+      <TextBlock Classes="soft" Text="{Binding Empty}" IsVisible="{Binding IsEmpty}" Margin="0,8,0,0" TextWrapping="Wrap" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

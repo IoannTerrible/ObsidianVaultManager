@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.OnlineQuestionView"
+             x:DataType="vm:OnlineViewModel">
+  <Border Classes="plate" BorderBrush="{DynamicResource Brush.Edge}" BorderThickness="1" CornerRadius="{DynamicResource Radius}" Padding="12,10">
+    <StackPanel Spacing="8" KeyboardNavigation.TabNavigation="Cycle">
+      <TextBlock Classes="cap" Text="{l:Caps Online_Title}" />
+      <TextBlock Text="{Binding Message}" TextWrapping="Wrap" />
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <Button Name="ConfirmButton" Content="{l:T Online_Confirm}" Command="{Binding ConfirmCommand}" IsVisible="{Binding CanConfirm}" />
+        <Button Name="CancelButton" Classes="quiet" Content="{l:T Online_Cancel}" Command="{Binding CancelCommand}" />
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</UserControl>

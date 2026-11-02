@@ -1,0 +1,120 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.MatrixView"
+             x:DataType="vm:MatrixViewModel">
+  <Grid RowDefinitions="Auto,*,62">
+    <!-- Legend and filter -->
+    <Border Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,0,0,1" Padding="16,4">
+      <Grid ColumnDefinitions="*,180">
+        <WrapPanel VerticalAlignment="Center">
+          <StackPanel Orientation="Horizontal" Spacing="5" Margin="0,0,16,0"><c:StateGlyph Kind="Match" /><TextBlock Classes="small soft" Text="{l:T Legend_Same}" /></StackPanel>
+          <StackPanel Orientation="Horizontal" Spacing="5" Margin="0,0,16,0"><c:StateGlyph Kind="Older" /><TextBlock Classes="small soft" Text="{l:T Legend_Older}" /></StackPanel>
+          <StackPanel Orientation="Horizontal" Spacing="5" Margin="0,0,16,0"><c:StateGlyph Kind="Off" /><TextBlock Classes="small soft" Text="{l:T Legend_Off}" /></StackPanel>
+          <StackPanel Orientation="Horizontal" Spacing="5" Margin="0,0,16,0"><c:StateGlyph Kind="None" /><TextBlock Classes="small soft" Text="{l:T Legend_None}" /></StackPanel>
+        </WrapPanel>
+        <TextBox Grid.Column="1" Text="{Binding Filter}" Watermark="{l:T Matrix_Filter}" />
+      </Grid>
+    </Border>
+
+    <!-- Plugin and Newest stay; vault columns scroll under their own header. -->
+    <Grid Grid.Row="1" ColumnDefinitions="330,*" RowDefinitions="28,*" Background="{DynamicResource Brush.Well}">
+      <Border Classes="tablehead">
+        <Grid ColumnDefinitions="250,80">
+          <TextBlock Classes="cap soft" Text="{l:Caps Matrix_Plugin}" Margin="16,0,0,0" />
+          <TextBlock Grid.Column="1" Classes="cap soft" Text="{l:Caps Matrix_Newest}" Margin="10,0,0,0" />
+        </Grid>
+      </Border>
+
+      <Border Grid.Column="1" Classes="tablehead">
+        <ScrollViewer Name="HeaderScroller" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+          <ItemsControl ItemsSource="{Binding Columns}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="vm:MatrixColumnVm">
+                <TextBlock Classes="small soft" FontFamily="{DynamicResource Font.Label}" Width="112" Padding="10,0" Height="28" LineHeight="28" Text="{Binding Name}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Tip}" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </ScrollViewer>
+      </Border>
+
+      <ScrollViewer Name="FixedScroller" Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+        <ItemsControl ItemsSource="{Binding Rows}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:MatrixRowVm">
+              <Button Theme="{StaticResource RowButton}" Classes.selected="{Binding IsSelected}" Height="28" Command="{Binding SelectCommand}">
+                <Border Classes="row">
+                  <Panel>
+                    <Border Width="2" HorizontalAlignment="Left" Background="{DynamicResource Brush.Sulfur}" IsVisible="{Binding IsSelected}" />
+                    <Grid ColumnDefinitions="250,80">
+                      <TextBlock Classes="medium" Text="{Binding Name}" Margin="16,0,6,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Name}" />
+                      <TextBlock Grid.Column="1" Classes="value" Text="{Binding Newest}" Margin="10,0,0,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                    </Grid>
+                  </Panel>
+                </Border>
+              </Button>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+
+      <ScrollViewer Name="BodyScroller" Grid.Row="1" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <ItemsControl ItemsSource="{Binding Rows}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:MatrixRowVm">
+              <Border Classes="row hoverable" Height="28" Background="{DynamicResource Brush.Transparent}" Classes.pick="{Binding IsSelected}">
+                <ItemsControl ItemsSource="{Binding Cells}">
+                  <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+                  </ItemsControl.ItemsPanel>
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="vm:MatrixCellVm">
+                      <Panel Width="112" ToolTip.Tip="{Binding Tip}" Background="{DynamicResource Brush.Transparent}">
+                        <StackPanel Orientation="Horizontal" Spacing="6" Margin="10,0,0,0" IsVisible="{Binding HasGlyph}" VerticalAlignment="Center">
+                          <c:StateGlyph Kind="{Binding Glyph}" />
+                          <TextBlock Classes="value" Classes.drift="{Binding IsOlder}" Text="{Binding Version}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <Button Theme="{StaticResource AddCellButton}" Content="{Binding Add.Text}" Command="{Binding Add.Command}" IsVisible="{Binding CanAdd}"
+                                AutomationProperties.Name="{Binding Tip}" />
+                      </Panel>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+    </Grid>
+
+    <!-- Detail: fixed height, so picking a row never moves the table. -->
+    <Border Grid.Row="2" Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,1,0,0" Padding="16,0">
+      <Grid ColumnDefinitions="*,Auto" IsVisible="{Binding HasDetail}">
+        <StackPanel VerticalAlignment="Center" Spacing="1">
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Classes="semi" Text="{Binding DetailTitle}" VerticalAlignment="Center" />
+            <TextBlock Classes="value dim" Text="{Binding DetailSize}" VerticalAlignment="Center" />
+            <TextBlock Classes="value" Text="{Binding OnlineNote}" IsVisible="{Binding HasOnlineNote}" VerticalAlignment="Center" />
+            <Border Classes="badge" IsVisible="{Binding NotInCatalog}">
+              <TextBlock Classes="small soft" Text="{l:T Badge_NotInCatalog}" />
+            </Border>
+          </StackPanel>
+          <TextBlock Classes="soft" Text="{Binding DetailText}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding DetailText}" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" Margin="16,0,0,0" VerticalAlignment="Center">
+          <Button Classes="quiet" Content="{Binding CatalogLink.Text}" Command="{Binding CatalogLink.Command}" IsVisible="{Binding CatalogLink.IsVisible}" />
+          <Button Content="{Binding DetailAction.Text}" Command="{Binding DetailAction.Command}" IsVisible="{Binding DetailAction.IsVisible}" />
+          <StackPanel Orientation="Horizontal" Spacing="5" IsVisible="{Binding DetailWaiting}" VerticalAlignment="Center">
+            <c:StateGlyph Kind="Waiting" />
+            <TextBlock Classes="small soft" Text="{l:T Status_Waiting}" VerticalAlignment="Center" />
+          </StackPanel>
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

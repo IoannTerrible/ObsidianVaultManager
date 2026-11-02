@@ -1,7 +1,0 @@
-<Solution>
-  <Folder Name="/Solution Items/">
-    <File Path="LICENSE.txt" />
-    <File Path="README.md" />
-  </Folder>
-  <Project Path="ObsidianScanner/ObsidianScanner.csproj" />
-</Solution>

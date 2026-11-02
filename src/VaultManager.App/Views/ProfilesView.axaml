@@ -1,0 +1,140 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.ProfilesView"
+             x:DataType="vm:ProfilesViewModel">
+  <UserControl.Resources>
+    <DataTemplate x:Key="PartTemplate" x:DataType="vm:ProfilePartVm">
+      <Grid ColumnDefinitions="*,24" Height="24">
+        <TextBlock Classes="soft" Text="{Binding Label}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Value}" />
+        <Button Grid.Column="1" Theme="{StaticResource IconButton}" Content="×" Command="{Binding RemoveCommand}" IsVisible="{Binding CanRemove}" ToolTip.Tip="{l:T Changes_Remove}" />
+      </Grid>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <ScrollViewer Background="{DynamicResource Brush.Well}">
+    <StackPanel Spacing="12" Margin="16,12">
+      <Grid ColumnDefinitions="Auto,260,*">
+        <TextBlock Classes="cap" Text="{l:Caps Profile_Pick}" Margin="0,0,10,0" />
+        <ComboBox Grid.Column="1" ItemsSource="{Binding Items}" SelectedItem="{Binding Selected}" HorizontalAlignment="Stretch">
+          <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:ProfileItemVm">
+              <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Grid.Column="2" Classes="small dim" Text="{l:T Profile_ReadOnlyNote}" IsVisible="{Binding IsBuiltIn}" VerticalAlignment="Center" Margin="12,0,0,0" TextWrapping="Wrap" />
+      </Grid>
+
+      <Grid ColumnDefinitions="18,*" IsVisible="{Binding HasProblem}">
+        <c:StateGlyph Kind="Blocked" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" />
+        <TextBlock Grid.Column="1" Classes="blocked" Text="{Binding Problem}" TextWrapping="Wrap" />
+      </Grid>
+
+      <Border Classes="card" IsVisible="{Binding ConfirmingDelete}">
+        <Grid ColumnDefinitions="*,Auto,Auto">
+          <TextBlock Text="{l:T Profile_DeleteQuestion}" VerticalAlignment="Center" TextWrapping="Wrap" />
+          <Button Grid.Column="1" Content="{l:T Profile_Delete}" Command="{Binding ConfirmDeleteCommand}" Margin="12,0,0,0" />
+          <Button Grid.Column="2" Classes="quiet" Content="{l:T Online_Cancel}" Command="{Binding CancelDeleteCommand}" Margin="6,0,0,0" />
+        </Grid>
+      </Border>
+
+      <!-- One plain answer per vault; what to do about it opens on a click. -->
+      <ItemsControl ItemsSource="{Binding AuditRows}" IsVisible="{Binding !IsEditing}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate x:DataType="vm:AuditRowVm">
+            <Border Classes="row">
+              <StackPanel>
+                <Button Theme="{StaticResource RowButton}" Height="34" Command="{Binding ToggleExpandCommand}" ToolTip.Tip="{Binding Tip}">
+                  <Grid ColumnDefinitions="18,*,*">
+                    <c:StateGlyph Kind="{Binding Glyph}" HorizontalAlignment="Left" />
+                    <TextBlock Grid.Column="1" Classes="medium" Text="{Binding Name}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="0,0,8,0" />
+                    <TextBlock Grid.Column="2" Classes="soft" Classes.match="{Binding IsMatch}" Classes.drift="{Binding IsMissing}" Text="{Binding Result}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                  </Grid>
+                </Button>
+                <StackPanel Margin="18,0,0,8" Spacing="6" IsVisible="{Binding IsExpanded}">
+                  <ItemsControl ItemsSource="{Binding Lines}">
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate x:DataType="x:String">
+                        <TextBlock Classes="small soft" Text="{Binding}" TextWrapping="Wrap" />
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                  <StackPanel Orientation="Horizontal" Spacing="6">
+                    <Button Classes="tight" Content="{Binding Fix.Text}" Command="{Binding Fix.Command}" IsVisible="{Binding Fix.IsVisible}" IsEnabled="{Binding Fix.IsEnabled}" />
+                    <Button Classes="tight" Content="{Binding Unbind.Text}" Command="{Binding Unbind.Command}" IsVisible="{Binding Unbind.IsVisible}" />
+                    <StackPanel Orientation="Horizontal" Spacing="5" IsVisible="{Binding IsWaiting}" VerticalAlignment="Center">
+                      <c:StateGlyph Kind="Waiting" />
+                      <TextBlock Classes="small soft" Text="{l:T Status_Waiting}" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </StackPanel>
+                </StackPanel>
+              </StackPanel>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <!-- The editor, behind Edit. -->
+      <Grid ColumnDefinitions="*,14,*" RowDefinitions="Auto,14,Auto" IsVisible="{Binding IsEditing}">
+        <Border Classes="card">
+          <StackPanel Spacing="8">
+            <StackPanel Spacing="3">
+              <TextBlock Classes="cap" Text="{l:Caps Profile_Name}" />
+              <TextBox Text="{Binding Name}" />
+            </StackPanel>
+            <StackPanel Spacing="3">
+              <TextBlock Classes="cap" Text="{l:Caps Profile_Description}" />
+              <TextBox Text="{Binding Description}" />
+            </StackPanel>
+            <CheckBox Content="{l:T Profile_FolderNotes}" IsChecked="{Binding FolderNotes}" />
+            <CheckBox Content="{l:T Profile_VaultMap}" IsChecked="{Binding VaultMap}" />
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Classes="card">
+          <StackPanel Spacing="8">
+            <TextBlock Classes="cap" Text="{l:Caps Profile_Plugins}" />
+            <ItemsControl ItemsSource="{Binding PluginParts}" ItemTemplate="{StaticResource PartTemplate}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate><UniformGrid Columns="2" /></ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <Grid ColumnDefinitions="*,6,*,Auto">
+              <ComboBox ItemsSource="{Binding LocalPlugins}" SelectedItem="{Binding LocalPluginChoice}" HorizontalAlignment="Stretch" PlaceholderText="{l:T Profile_FromThisPc}" />
+              <TextBox Grid.Column="2" Classes="value" Text="{Binding NewPluginId}" Watermark="{l:T Profile_PluginId}" />
+              <Button Grid.Column="3" Margin="6,0,0,0" Content="{l:T Action_Add}" Command="{Binding AddPluginFromBoxCommand}" />
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Classes="card">
+          <StackPanel Spacing="8">
+            <TextBlock Classes="cap" Text="{l:Caps Profile_Folders}" />
+            <ItemsControl ItemsSource="{Binding FolderParts}" ItemTemplate="{StaticResource PartTemplate}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate><UniformGrid Columns="2" /></ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <Grid ColumnDefinitions="*,Auto">
+              <TextBox Text="{Binding NewFolder}" Watermark="{l:T Profile_NewFolder}" />
+              <Button Grid.Column="1" Margin="6,0,0,0" Content="{l:T Action_Add}" Command="{Binding AddFolderCommand}" />
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="2" Classes="card">
+          <StackPanel Spacing="8">
+            <TextBlock Classes="cap" Text="{l:Caps Profile_AlsoSetUp}" />
+            <TextBlock Classes="soft" Text="{l:T Profile_AlsoLine1}" TextWrapping="Wrap" />
+            <TextBlock Classes="soft" Text="{l:T Profile_AlsoLine2}" TextWrapping="Wrap" />
+            <TextBlock Classes="soft" Text="{l:T Profile_AlsoLine3}" TextWrapping="Wrap" />
+            <TextBlock Classes="small dim" Text="{l:T Profile_Never}" TextWrapping="Wrap" />
+          </StackPanel>
+        </Border>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

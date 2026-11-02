@@ -1,0 +1,73 @@
+{
+  "Format": 1,
+  "Id": "tech-tea-studio",
+  "Name": "Tech Tea Studio",
+  "Description": "The vault layout every studio project keeps.",
+  "Plugins": [
+    "dataview",
+    "folder-notes",
+    "metadata-menu",
+    "obsidian-git",
+    "obsidian-linter",
+    "omnisearch",
+    "templater-obsidian",
+    "waypoint"
+  ],
+  "Folders": [
+    "00 System",
+    "01 Architecture",
+    "02 Services",
+    "03 Plugins",
+    "04 Operations",
+    "05 Summaries",
+    "06 Decisions",
+    "07 Meetings",
+    "Inbox"
+  ],
+  "FolderNotes": true,
+  "VaultMap": true,
+  "Settings": {
+    "app.json": {},
+    "appearance.json": { "accentColor": "#67ad38" },
+    "core-plugins.json": {
+      "file-explorer": true,
+      "global-search": true,
+      "switcher": true,
+      "graph": true,
+      "backlink": true,
+      "canvas": true,
+      "outgoing-link": true,
+      "tag-pane": true,
+      "footnotes": false,
+      "properties": true,
+      "page-preview": true,
+      "daily-notes": true,
+      "templates": true,
+      "note-composer": true,
+      "command-palette": true,
+      "slash-command": false,
+      "editor-status": true,
+      "bookmarks": true,
+      "markdown-importer": false,
+      "zk-prefixer": false,
+      "random-note": false,
+      "outline": true,
+      "word-count": true,
+      "slides": false,
+      "audio-recorder": false,
+      "workspaces": false,
+      "file-recovery": true,
+      "publish": false,
+      "sync": false,
+      "bases": true,
+      "webviewer": false
+    }
+  },
+  "Templates": {
+    "Note.md": "---\ntype: note\nstatus: draft\npriority: medium\ntags: []\naliases: []\nsummary: \"\"\nrelated: []\ncreated: <% tp.date.now(\"YYYY-MM-DD\") %>\nupdated: <% tp.date.now(\"YYYY-MM-DD\") %>\n---\n\n# <% tp.file.title %>\n\n## Summary\n\n## Context\n\n## Details\n\n## Links\n\n## Tasks\n\n- [ ]\n",
+    "Decision.md": "---\ntype: decision\nstatus: active\npriority: medium\ntags: [adr]\naliases: []\nsummary: \"\"\nrelated: []\ncreated: <% tp.date.now(\"YYYY-MM-DD\") %>\nupdated: <% tp.date.now(\"YYYY-MM-DD\") %>\n---\n\n# <% tp.file.title %>\n\n## Context\n\nWhy is this decision needed? What forces are at play?\n\n## Decision\n\nWhat we chose.\n\n## Alternatives Considered\n\nWhat else we looked at and why we rejected it.\n\n## Consequences\n\nWhat this commits us to. Tradeoffs.\n",
+    "Meeting.md": "---\ntype: meeting\nstatus: active\npriority: medium\ntags: [meeting]\naliases: []\nsummary: \"\"\nrelated: []\ncreated: <% tp.date.now(\"YYYY-MM-DD\") %>\nupdated: <% tp.date.now(\"YYYY-MM-DD\") %>\n---\n\n# <% tp.file.title %>\n\n## Attendees\n\n## Agenda\n\n## Discussion\n\n## Decisions\n\n## Action Items\n\n- [ ]\n",
+    "Release Summary.md": "---\ntype: summary\nstatus: active\npriority: medium\ntags: [release, changelog]\naliases: []\nsummary: \"\"\nrelated: []\ncreated: <% tp.date.now(\"YYYY-MM-DD\") %>\nupdated: <% tp.date.now(\"YYYY-MM-DD\") %>\n---\n\n# <% tp.file.title %>\n\n## Shipped\n\nWhat landed.\n\n## Intentionally Deferred\n\nWhat we did not do this round and why.\n\n## Follow-ups\n\nConcrete next steps.\n\n## Links\n",
+    "Service.md": "---\ntype: index\nstatus: active\npriority: medium\ntags: [service]\naliases: []\nsummary: \"\"\nrelated: []\ncreated: <% tp.date.now(\"YYYY-MM-DD\") %>\nupdated: <% tp.date.now(\"YYYY-MM-DD\") %>\n---\n\n# <% tp.file.title %>\n\n## Purpose\n\nOne paragraph.\n\n## Responsibilities\n\n## Dependencies\n\n## Key Types\n\n## Notable Decisions\n\n## Links\n"
+  }
+}

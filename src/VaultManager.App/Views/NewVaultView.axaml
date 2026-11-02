@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.NewVaultView"
+             x:DataType="vm:NewVaultViewModel">
+  <ScrollViewer Background="{DynamicResource Brush.Well}">
+    <Grid ColumnDefinitions="7*,14,5*" Margin="16,14">
+      <Border Classes="card">
+        <StackPanel Spacing="8">
+          <StackPanel Spacing="3">
+            <TextBlock Classes="cap" Text="{l:Caps NewVault_Name}" />
+            <TextBox Text="{Binding Name}" />
+          </StackPanel>
+          <StackPanel Spacing="3">
+            <TextBlock Classes="cap" Text="{l:Caps NewVault_Parent}" />
+            <Grid ColumnDefinitions="*,Auto">
+              <TextBox Classes="value" Text="{Binding Parent}" />
+              <Button Grid.Column="1" Margin="6,0,0,0" Content="{l:T NewVault_Browse}" Command="{Binding BrowseCommand}" />
+            </Grid>
+          </StackPanel>
+          <StackPanel Spacing="3">
+            <TextBlock Classes="cap" Text="{l:Caps NewVault_Profile}" />
+            <ComboBox ItemsSource="{Binding Choices}" SelectedItem="{Binding Choice}" HorizontalAlignment="Stretch">
+              <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:NewVaultProfileChoice">
+                  <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
+            </ComboBox>
+          </StackPanel>
+          <Grid ColumnDefinitions="80,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="1" ColumnSpacing="10">
+            <TextBlock Classes="cap" Text="{l:Caps NewVault_Plugins}" />
+            <TextBlock Grid.Column="1" Classes="soft" Text="{Binding PluginsText}" TextWrapping="Wrap" />
+            <TextBlock Grid.Row="1" Classes="cap" Text="{l:Caps NewVault_Size}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Classes="value soft" Text="{Binding SizeText}" />
+            <TextBlock Grid.Row="2" Classes="cap" Text="{l:Caps NewVault_Download}" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Classes="soft" Text="{Binding DownloadText}" />
+          </Grid>
+          <TextBlock Classes="small drift" Text="{Binding Unavailable}" IsVisible="{Binding HasUnavailable}" TextWrapping="Wrap" />
+          <CheckBox IsChecked="{Binding Register}">
+            <TextBlock Text="{l:T NewVault_Register}" TextWrapping="Wrap" />
+          </CheckBox>
+          <TextBlock Classes="small drift" Text="{Binding Hint}" MinHeight="18" TextWrapping="Wrap" />
+          <Button Classes="go" HorizontalAlignment="Left" Content="{Binding AddText}" Command="{Binding AddCommand}" IsEnabled="{Binding CanAdd}" />
+          <TextBlock Classes="small dim" Text="{l:T NewVault_NoUndo}" TextWrapping="Wrap" />
+        </StackPanel>
+      </Border>
+
+      <Border Grid.Column="2" Classes="card">
+        <StackPanel Spacing="8">
+          <TextBlock Classes="cap" Text="{l:Caps NewVault_WillCreate}" />
+          <Border Background="{DynamicResource Brush.Well}" CornerRadius="{DynamicResource Radius}" Padding="10,8">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+              <TextBlock Classes="value soft" Text="{Binding Tree}" LineHeight="19" />
+            </ScrollViewer>
+          </Border>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

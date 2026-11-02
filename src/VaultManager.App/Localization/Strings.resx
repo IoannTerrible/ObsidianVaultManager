@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App_Title" xml:space="preserve"><value>Vault Manager</value></data>
+  <data name="Action_Back" xml:space="preserve"><value>Back</value></data>
+  <data name="Action_UpdateN" xml:space="preserve"><value>Update {0}</value></data>
+  <data name="Action_UpdateAll" xml:space="preserve"><value>Update all</value></data>
+  <data name="Head_AllPlugins" xml:space="preserve"><value>All plugins</value></data>
+  <data name="Head_NoneBehind" xml:space="preserve"><value>No plugins are behind</value></data>
+  <data name="Head_ScanningShort" xml:space="preserve"><value>Scanning</value></data>
+  <data name="Menu_More" xml:space="preserve"><value>More</value></data>
+  <data name="Menu_Home" xml:space="preserve"><value>Back to the list</value></data>
+  <data name="Menu_UndoLast" xml:space="preserve"><value>Undo last change ({0})</value></data>
+  <data name="Menu_CopySettings" xml:space="preserve"><value>Copy settings from...</value></data>
+  <data name="Row_In" xml:space="preserve"><value>in {0}</value></data>
+  <data name="Row_Differs" xml:space="preserve"><value>same version, different files</value></data>
+  <data name="Row_Online" xml:space="preserve"><value>online</value></data>
+  <data name="Row_PluginsOff" xml:space="preserve"><value>plugins seem to be off</value></data>
+  <data name="Row_ListUnreadable" xml:space="preserve"><value>plugin list cannot be read</value></data>
+  <data name="Row_ScanError" xml:space="preserve"><value>could not be scanned</value></data>
+  <data name="Changes_Updating" xml:space="preserve"><value>Updating {0}/{1}</value></data>
+  <data name="Log_Expand" xml:space="preserve"><value>Open the log</value></data>
+  <data name="Log_Collapse" xml:space="preserve"><value>Close the log</value></data>
+  <data name="Log_PendingDamaged" xml:space="preserve"><value>A waiting change could not be read and was dropped.</value></data>
+  <data name="Audit_Matches" xml:space="preserve"><value>matches</value></data>
+  <data name="Audit_SummaryMissing" xml:space="preserve"><value>{0} missing</value></data>
+  <data name="Profile_Edit" xml:space="preserve"><value>Edit</value></data>
+  <data name="Profile_Done" xml:space="preserve"><value>Done</value></data>
+  <data name="Sync_TitleTo" xml:space="preserve"><value>Copy settings to {0}</value></data>
+  <data name="Sync_SaveChoices" xml:space="preserve"><value>Save choices</value></data>
+  <data name="Language_English" xml:space="preserve"><value>English</value></data>
+  <data name="Language_Russian" xml:space="preserve"><value>Russian</value></data>
+  <data name="Window_Minimize" xml:space="preserve"><value>Minimize</value></data>
+  <data name="Window_Maximize" xml:space="preserve"><value>Maximize</value></data>
+  <data name="Window_Close" xml:space="preserve"><value>Close</value></data>
+  <data name="List_And" xml:space="preserve"><value>and</value></data>
+  <data name="Nav_Plugins" xml:space="preserve"><value>Plugins</value></data>
+  <data name="Nav_Profiles" xml:space="preserve"><value>Profiles</value></data>
+  <data name="Rail_Vaults" xml:space="preserve"><value>Vaults</value></data>
+  <data name="Rail_NewVault" xml:space="preserve"><value>+ New vault</value></data>
+  <data name="Rail_NoVaults" xml:space="preserve"><value>No vaults yet.</value></data>
+  <data name="Rail_Scanning" xml:space="preserve"><value>Scanning vaults.</value></data>
+  <data name="Rail_NotScanned" xml:space="preserve"><value>Not scanned yet.</value></data>
+  <data name="Rail_Unreadable" xml:space="preserve"><value>The vault list cannot be read.</value></data>
+  <data name="Vault_Offline" xml:space="preserve"><value>offline</value></data>
+  <data name="Vault_Open" xml:space="preserve"><value>open</value></data>
+  <data name="Vault_OlderCount" xml:space="preserve"><value>{0} older</value></data>
+  <data name="Vault_Unreadable" xml:space="preserve"><value>blocked</value></data>
+  <data name="Head_Plugins" xml:space="preserve"><value>Plugins</value></data>
+  <data name="Head_Scanning" xml:space="preserve"><value>Scanning,</value></data>
+  <data name="Head_ScanFailed" xml:space="preserve"><value>The scan failed,</value></data>
+  <data name="Head_NotScanned" xml:space="preserve"><value>Not scanned yet,</value></data>
+  <data name="Head_Scanned" xml:space="preserve"><value>Scanned {0},</value></data>
+  <data name="Head_CheckedOnline" xml:space="preserve"><value>checked online {0}.</value></data>
+  <data name="Head_NotCheckedOnline" xml:space="preserve"><value>not checked online.</value></data>
+  <data name="Head_Rescan" xml:space="preserve"><value>Rescan</value></data>
+  <data name="Head_CheckOnline" xml:space="preserve"><value>Check online</value></data>
+  <data name="Head_NothingNeeded" xml:space="preserve"><value>Nothing needs attention</value></data>
+  <data name="Empty_NoVaults" xml:space="preserve"><value>No vaults found. Open a vault in Obsidian once, or add a folder here.</value></data>
+  <data name="Empty_Unreadable" xml:space="preserve"><value>Could not read Obsidian's vault list. The file may be damaged. Nothing was changed.</value></data>
+  <data name="Empty_AddFolder" xml:space="preserve"><value>Add folder</value></data>
+  <data name="Empty_TryAgain" xml:space="preserve"><value>Try again</value></data>
+  <data name="Status_Waiting" xml:space="preserve"><value>Waiting</value></data>
+  <data name="Action_Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Action_PlusAdd" xml:space="preserve"><value>+ Add</value></data>
+  <data name="Action_AddMissing" xml:space="preserve"><value>Add what is missing</value></data>
+  <data name="Action_AddPlugin" xml:space="preserve"><value>Add plugin</value></data>
+  <data name="Action_CatalogPage" xml:space="preserve"><value>Catalog page</value></data>
+  <data name="Action_Ignore" xml:space="preserve"><value>Ignore</value></data>
+  <data name="Action_KeepAsIs" xml:space="preserve"><value>Keep as is</value></data>
+  <data name="Action_OpenInObsidian" xml:space="preserve"><value>Open in Obsidian</value></data>
+  <data name="Action_Restore" xml:space="preserve"><value>Restore</value></data>
+  <data name="Action_StopUsing" xml:space="preserve"><value>Stop using</value></data>
+  <data name="Action_TurnOff" xml:space="preserve"><value>Turn off</value></data>
+  <data name="Action_TurnOn" xml:space="preserve"><value>Turn on</value></data>
+  <data name="Action_Update" xml:space="preserve"><value>Update</value></data>
+  <data name="Action_UpdateVaults" xml:space="preserve"><value>Update {0}</value></data>
+  <data name="Action_UseProfile" xml:space="preserve"><value>Use this profile</value></data>
+  <data name="Attn_OlderHow" xml:space="preserve"><value>Your newest copy is {0} in {1}. Nothing to download.</value></data>
+  <data name="Attn_OlderHowKept" xml:space="preserve"><value>Your newest copy is {0} in {1}. Nothing to download, settings are kept.</value></data>
+  <data name="Attn_Differs" xml:space="preserve"><value>{0} is {1} in {2}, but the files differ</value></data>
+  <data name="Attn_DiffersHow" xml:space="preserve"><value>The version number matches, main.js does not. One copy may be changed by hand or by something else. Check it before you copy it anywhere.</value></data>
+  <data name="Attn_NewerHow" xml:space="preserve"><value>Your newest copy is {0}. The size is shown before anything downloads.</value></data>
+  <data name="Attn_OffHow" xml:space="preserve"><value>Turn them on in Obsidian: Settings, Community plugins. Only you can do this step.</value></data>
+  <data name="Attn_GapMap" xml:space="preserve"><value>the vault map</value></data>
+  <data name="Attn_GapHow" xml:space="preserve"><value>Part of the {0} profile. Skip it if this project does not need it.</value></data>
+  <data name="Attn_GapHowUnavailable" xml:space="preserve"><value>Part of the {0} profile. Not on this PC: {1}.</value></data>
+  <data name="Attn_ListUnreadableHow" xml:space="preserve"><value>The file may be damaged. Changes to this vault are blocked until it is fixed.</value></data>
+  <data name="Attn_ScanErrorHow" xml:space="preserve"><value>Reason: {0}. Rescan when the drive is back.</value></data>
+  <data name="Legend_Same" xml:space="preserve"><value>Same as your newest copy</value></data>
+  <data name="Legend_Older" xml:space="preserve"><value>Older, version shown</value></data>
+  <data name="Legend_Off" xml:space="preserve"><value>Installed, off</value></data>
+  <data name="Legend_None" xml:space="preserve"><value>Not installed, point at it to add</value></data>
+  <data name="Matrix_Filter" xml:space="preserve"><value>Filter plugins</value></data>
+  <data name="Matrix_Plugin" xml:space="preserve"><value>Plugin</value></data>
+  <data name="Matrix_Newest" xml:space="preserve"><value>Newest</value></data>
+  <data name="Matrix_AddTip" xml:space="preserve"><value>Add {0} to {1}</value></data>
+  <data name="Matrix_DetailOlder" xml:space="preserve"><value>Older in {0}. Copied from {1}, nothing to download.</value></data>
+  <data name="Matrix_DetailOnly" xml:space="preserve"><value>Installed only in {0}.</value></data>
+  <data name="Matrix_DetailSame" xml:space="preserve"><value>Same version in {0}, and the files are identical.</value></data>
+  <data name="Matrix_DetailNoFiles" xml:space="preserve"><value>Listed as enabled, but no vault has its files.</value></data>
+  <data name="Matrix_DetailDiffers" xml:space="preserve"><value>Same version number with different files. Check it before you copy it anywhere.</value></data>
+  <data name="Matrix_OnlineVersion" xml:space="preserve"><value>{0} online</value></data>
+  <data name="Badge_NotInCatalog" xml:space="preserve"><value>Not in the catalog</value></data>
+  <data name="Cell_Current" xml:space="preserve"><value>Same as your newest copy</value></data>
+  <data name="Cell_Older" xml:space="preserve"><value>Older than your newest copy</value></data>
+  <data name="Cell_Off" xml:space="preserve"><value>Installed, turned off</value></data>
+  <data name="Cell_Broken" xml:space="preserve"><value>Listed as enabled, but its files are gone</value></data>
+  <data name="Cell_Empty" xml:space="preserve"><value>Not installed</value></data>
+  <data name="Cell_Waiting" xml:space="preserve"><value>Waiting</value></data>
+  <data name="Cell_Offline" xml:space="preserve"><value>Drive not connected</value></data>
+  <data name="Cell_Blocked" xml:space="preserve"><value>This vault is blocked: its plugin list cannot be read</value></data>
+  <data name="Changes_Retry" xml:space="preserve"><value>Retry</value></data>
+  <data name="Changes_Remove" xml:space="preserve"><value>Remove</value></data>
+  <data name="Line_Add" xml:space="preserve"><value>add {0}</value></data>
+  <data name="Line_From" xml:space="preserve"><value>from {0}</value></data>
+  <data name="Line_Download" xml:space="preserve"><value>download {0}</value></data>
+  <data name="Line_TurnOn" xml:space="preserve"><value>turn on</value></data>
+  <data name="Line_TurnOff" xml:space="preserve"><value>turn off</value></data>
+  <data name="Line_FilesStay" xml:space="preserve"><value>files stay on disk</value></data>
+  <data name="Line_SettingsNew" xml:space="preserve"><value>new file</value></data>
+  <data name="Line_SettingsReplace" xml:space="preserve"><value>replaces the file, a copy is kept</value></data>
+  <data name="Line_Parts" xml:space="preserve"><value>Folders and notes of {0}</value></data>
+  <data name="Line_PartsDetail" xml:space="preserve"><value>only adds, existing notes stay</value></data>
+  <data name="Line_EmptyVault" xml:space="preserve"><value>empty vault</value></data>
+  <data name="Line_Register" xml:space="preserve"><value>add to Obsidian's vault list</value></data>
+  <data name="Result_Failed" xml:space="preserve"><value>Failed: {0}</value></data>
+  <data name="Result_Waiting" xml:space="preserve"><value>Waiting: {0}</value></data>
+  <data name="Result_Review" xml:space="preserve"><value>Changed: {0}. Nothing was overwritten. Retry uses what is there now.</value></data>
+  <data name="ChangeStatus_Done" xml:space="preserve"><value>Done</value></data>
+  <data name="ChangeStatus_Failed" xml:space="preserve"><value>Failed</value></data>
+  <data name="ChangeStatus_Waiting" xml:space="preserve"><value>Waiting</value></data>
+  <data name="ChangeStatus_NeedsReview" xml:space="preserve"><value>Needs review</value></data>
+  <data name="ChangeNote_None" xml:space="preserve"><value>No note</value></data>
+  <data name="ChangeNote_SettingsSkippedSecret" xml:space="preserve"><value>Settings were left behind: they hold something that looks like a key.</value></data>
+  <data name="ChangeFailure_None" xml:space="preserve"><value>no problem</value></data>
+  <data name="ChangeFailure_VaultOffline" xml:space="preserve"><value>the drive is not connected</value></data>
+  <data name="ChangeFailure_VaultOpen" xml:space="preserve"><value>the vault is open in Obsidian</value></data>
+  <data name="ChangeFailure_ObsidianRunning" xml:space="preserve"><value>Obsidian is running</value></data>
+  <data name="ChangeFailure_SourceMissing" xml:space="preserve"><value>the source copy is gone</value></data>
+  <data name="ChangeFailure_SourceChanged" xml:space="preserve"><value>the source copy changed after this was added</value></data>
+  <data name="ChangeFailure_TargetChanged" xml:space="preserve"><value>this vault's copy changed after this was added</value></data>
+  <data name="ChangeFailure_TargetNotEmpty" xml:space="preserve"><value>the folder already holds files</value></data>
+  <data name="ChangeFailure_ListUnreadable" xml:space="preserve"><value>its list of enabled plugins cannot be read</value></data>
+  <data name="ChangeFailure_RegistryUnreadable" xml:space="preserve"><value>Obsidian's vault list cannot be read</value></data>
+  <data name="ChangeFailure_SecretInSettings" xml:space="preserve"><value>the file holds something that looks like a key</value></data>
+  <data name="ChangeFailure_DownloadFailed" xml:space="preserve"><value>the download failed</value></data>
+  <data name="ChangeFailure_VerifyFailed" xml:space="preserve"><value>the copy did not match its source</value></data>
+  <data name="ChangeFailure_NothingToUndo" xml:space="preserve"><value>nothing to undo</value></data>
+  <data name="ChangeFailure_RecoveryNeeded" xml:space="preserve"><value>the old copy could not be put back; it is kept in .obsidian\.vault-manager-staging</value></data>
+  <data name="ChangeFailure_Unexpected" xml:space="preserve"><value>something unexpected went wrong</value></data>
+  <data name="ChangeFailure_WriteFailed" xml:space="preserve"><value>could not write to the disk</value></data>
+  <data name="Undo_Button" xml:space="preserve"><value>Undo</value></data>
+  <data name="Undo_Last" xml:space="preserve"><value>Last: {0}, {1}</value></data>
+  <data name="Undo_Blocked" xml:space="preserve"><value>{0} could not run. Undo again when it can.</value></data>
+  <data name="Undo_Parts" xml:space="preserve"><value>Folders and notes [{0}]</value></data>
+  <data name="Log_Caption" xml:space="preserve"><value>Log · what changes, and to what</value></data>
+  <data name="Log_Scanned" xml:space="preserve"><value>Scanned {0} and {1}</value></data>
+  <data name="Log_ScanFailed" xml:space="preserve"><value>The scan failed: {0}. Nothing was changed.</value></data>
+  <data name="Log_ApplyStopped" xml:space="preserve"><value>Stopped: {0}. Check each line.</value></data>
+  <data name="Log_NewVaultNoUndo" xml:space="preserve"><value>New vaults are not undone. Delete the folder if you do not need it.</value></data>
+  <data name="Log_LineFailed" xml:space="preserve"><value>{0}: failed, {1}</value></data>
+  <data name="Log_LineWaiting" xml:space="preserve"><value>{0}: waiting, {1}</value></data>
+  <data name="Log_LineReview" xml:space="preserve"><value>{0}: review, {1}</value></data>
+  <data name="Log_Undone" xml:space="preserve"><value>{0}: put back</value></data>
+  <data name="Log_UndoBlocked" xml:space="preserve"><value>{0}: could not put back, {1}</value></data>
+  <data name="Log_UndoDone" xml:space="preserve"><value>Restored from the saved copy.</value></data>
+  <data name="Log_Unexpected" xml:space="preserve"><value>Something failed: {0}. Check the drive and rescan.</value></data>
+  <data name="Log_Opened" xml:space="preserve"><value>Opened {0}</value></data>
+  <data name="Log_OpenFailed" xml:space="preserve"><value>Could not open {0}</value></data>
+  <data name="Log_Checked" xml:space="preserve"><value>Checked online: {0} answered, {1}.</value></data>
+  <data name="Log_CheckStopped" xml:space="preserve"><value>Online check stopped.</value></data>
+  <data name="Log_ProfileCreated" xml:space="preserve"><value>Profile {0} created</value></data>
+  <data name="Log_ProfileDeleted" xml:space="preserve"><value>Profile {0} deleted</value></data>
+  <data name="Log_ProfileImported" xml:space="preserve"><value>Profile {0} imported</value></data>
+  <data name="Log_ProfileExported" xml:space="preserve"><value>Profile {0} exported to {1}</value></data>
+  <data name="Log_ProfileBound" xml:space="preserve"><value>{0} now uses the {1} profile</value></data>
+  <data name="Demo_Mark" xml:space="preserve"><value>Demo</value></data>
+  <data name="Demo_ObsidianRunning" xml:space="preserve"><value>Obsidian: running</value></data>
+  <data name="Demo_ObsidianClosed" xml:space="preserve"><value>Obsidian: closed</value></data>
+  <data name="Demo_Toggle" xml:space="preserve"><value>Switch</value></data>
+  <data name="Demo_WouldOpen" xml:space="preserve"><value>Demo: would open {0}</value></data>
+  <data name="Demo_LogClosed" xml:space="preserve"><value>Demo: Obsidian was closed</value></data>
+  <data name="Demo_LogOpened" xml:space="preserve"><value>Demo: Obsidian was opened</value></data>
+  <data name="Online_Title" xml:space="preserve"><value>Check online</value></data>
+  <data name="Online_AskingSize" xml:space="preserve"><value>Asking for the size of the catalog.</value></data>
+  <data name="Online_Question" xml:space="preserve"><value>This fetches the plugin catalog, {0}, then makes {1}, one per installed plugin. Continue?</value></data>
+  <data name="Online_QuestionNoSize" xml:space="preserve"><value>The server did not say the size of the plugin catalog. After it come {0}, one per installed plugin. Continue?</value></data>
+  <data name="Online_Checking" xml:space="preserve"><value>Checking.</value></data>
+  <data name="Online_Failed" xml:space="preserve"><value>Could not reach the catalog. Nothing was changed.</value></data>
+  <data name="Online_Confirm" xml:space="preserve"><value>Check online</value></data>
+  <data name="Online_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Offer_CheckSize" xml:space="preserve"><value>Check size</value></data>
+  <data name="Offer_Asking" xml:space="preserve"><value>Asking</value></data>
+  <data name="Offer_Download" xml:space="preserve"><value>Download {0}</value></data>
+  <data name="Offer_AddSized" xml:space="preserve"><value>Add {0}</value></data>
+  <data name="Offer_Failed" xml:space="preserve"><value>Could not get the size. Nothing was downloaded.</value></data>
+  <data name="Offer_TryAgain" xml:space="preserve"><value>Try again</value></data>
+  <data name="Picker_Title" xml:space="preserve"><value>Add plugin to {0}</value></data>
+  <data name="Picker_Filter" xml:space="preserve"><value>Filter plugins, Enter adds the first</value></data>
+  <data name="Picker_CopySettings" xml:space="preserve"><value>Copy settings too, unless they hold a key</value></data>
+  <data name="Picker_FromCatalog" xml:space="preserve"><value>From the catalog</value></data>
+  <data name="Picker_RowSub" xml:space="preserve"><value>from {0}, {1}</value></data>
+  <data name="Picker_CatalogSub" xml:space="preserve"><value>{0}, size not known yet</value></data>
+  <data name="Picker_CatalogSized" xml:space="preserve"><value>{0}, download {1}</value></data>
+  <data name="Picker_CatalogMore" xml:space="preserve"><value>{0} more. Filter to find them.</value></data>
+  <data name="Picker_AllHere" xml:space="preserve"><value>Every plugin on this PC is already here.</value></data>
+  <data name="Picker_NoMatch" xml:space="preserve"><value>No match among plugins on this PC.</value></data>
+  <data name="Picker_NoMatchCatalog" xml:space="preserve"><value>No match on this PC or in the catalog.</value></data>
+  <data name="Picker_Note" xml:space="preserve"><value>Only plugins from your other vaults are listed. Nothing to download.</value></data>
+  <data name="Picker_NoteCatalog" xml:space="preserve"><value>Plugins from your other vaults cost nothing. Catalog plugins show their size before they can be added.</value></data>
+  <data name="VaultPage_ProfileLine" xml:space="preserve"><value>{0} profile: {1}</value></data>
+  <data name="VaultPage_On" xml:space="preserve"><value>on</value></data>
+  <data name="VaultPage_Off" xml:space="preserve"><value>off</value></data>
+  <data name="VaultPage_FilesMissing" xml:space="preserve"><value>files missing</value></data>
+  <data name="VaultPage_From" xml:space="preserve"><value>From {0}. Nothing to download.</value></data>
+  <data name="VaultPage_FromKept" xml:space="preserve"><value>From {0}. Nothing to download, settings are kept.</value></data>
+  <data name="VaultPage_Empty" xml:space="preserve"><value>No plugins in this vault yet. Use Add plugin to copy one from another vault.</value></data>
+  <data name="VaultPage_EmptyOffline" xml:space="preserve"><value>Nothing can be read while the drive is away. Changes added now wait for it.</value></data>
+  <data name="VaultPage_EmptyBlocked" xml:space="preserve"><value>The plugins of this vault cannot be shown until it can be read.</value></data>
+  <data name="Banner_Offline" xml:space="preserve"><value>The drive is not connected</value></data>
+  <data name="Banner_OfflineHow" xml:space="preserve"><value>The vault stays on the list. It cannot be a source for copies, and changes for it wait until the drive is back.</value></data>
+  <data name="Banner_Open" xml:space="preserve"><value>Open in Obsidian</value></data>
+  <data name="Banner_OpenHow" xml:space="preserve"><value>Changes wait until you close it: Obsidian rewrites its settings when a vault closes.</value></data>
+  <data name="Banner_ListUnreadable" xml:space="preserve"><value>The list of enabled plugins cannot be read</value></data>
+  <data name="Banner_ListUnreadableHow" xml:space="preserve"><value>The file may be damaged. Changes to plugins here are blocked, and the file is left as it is.</value></data>
+  <data name="Banner_ScanError" xml:space="preserve"><value>This vault could not be scanned</value></data>
+  <data name="Banner_ScanErrorHow" xml:space="preserve"><value>Reason: {0}. Rescan when the drive is back.</value></data>
+  <data name="Banner_OffHow" xml:space="preserve"><value>Turn them on in Obsidian: Settings, Community plugins. Added plugins will not run until then.</value></data>
+  <data name="Banner_UnknownHow" xml:space="preserve"><value>Obsidian keeps this in its own storage, and it could not be read this time. Check it in Obsidian.</value></data>
+  <data name="CommunityPlugins_Unknown" xml:space="preserve"><value>Could not tell whether community plugins are on</value></data>
+  <data name="CommunityPlugins_On" xml:space="preserve"><value>Community plugins are on</value></data>
+  <data name="CommunityPlugins_Off" xml:space="preserve"><value>Community plugins are turned off here</value></data>
+  <data name="CommunityPlugins_NeverEnabled" xml:space="preserve"><value>Community plugins seem to be turned off here</value></data>
+  <data name="Profile_Pick" xml:space="preserve"><value>Profile</value></data>
+  <data name="Profile_ReadOnlyNote" xml:space="preserve"><value>Built in and read-only. Duplicate it to change it.</value></data>
+  <data name="Profile_New" xml:space="preserve"><value>New profile</value></data>
+  <data name="Profile_Duplicate" xml:space="preserve"><value>Duplicate</value></data>
+  <data name="Profile_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Profile_Import" xml:space="preserve"><value>Import</value></data>
+  <data name="Profile_Export" xml:space="preserve"><value>Export</value></data>
+  <data name="Profile_NewName" xml:space="preserve"><value>New profile</value></data>
+  <data name="Profile_CopyName" xml:space="preserve"><value>{0} copy</value></data>
+  <data name="Profile_DeleteQuestion" xml:space="preserve"><value>Delete this profile? Vaults that use it stop using it. Nothing in them changes.</value></data>
+  <data name="Profile_Name" xml:space="preserve"><value>Name</value></data>
+  <data name="Profile_Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Profile_FolderNotes" xml:space="preserve"><value>A note in each folder</value></data>
+  <data name="Profile_VaultMap" xml:space="preserve"><value>A vault map</value></data>
+  <data name="Profile_Plugins" xml:space="preserve"><value>Plugins in this profile</value></data>
+  <data name="Profile_FromThisPc" xml:space="preserve"><value>From this PC</value></data>
+  <data name="Profile_PluginId" xml:space="preserve"><value>Plugin id</value></data>
+  <data name="Profile_Folders" xml:space="preserve"><value>Folders</value></data>
+  <data name="Profile_NewFolder" xml:space="preserve"><value>New folder</value></data>
+  <data name="Profile_AlsoSetUp" xml:space="preserve"><value>Also set up</value></data>
+  <data name="Profile_AlsoLine1" xml:space="preserve"><value>Folder layout with a note in each folder, and a vault map</value></data>
+  <data name="Profile_AlsoLine2" xml:space="preserve"><value>Note templates and required note fields</value></data>
+  <data name="Profile_AlsoLine3" xml:space="preserve"><value>Core plugins, editor and appearance settings</value></data>
+  <data name="Profile_Never" xml:space="preserve"><value>Never copied: open tabs, Git plugin settings, plugin caches, settings that hold a password or key.</value></data>
+  <data name="Profile_Rejected" xml:space="preserve"><value>This file was not imported. {0} Nothing was changed.</value></data>
+  <data name="Profile_ImportFailed" xml:space="preserve"><value>This file could not be read. Nothing was changed.</value></data>
+  <data name="Profile_ExportFailed" xml:space="preserve"><value>The profile could not be written there.</value></data>
+  <data name="Profile_FileType" xml:space="preserve"><value>Vault profile</value></data>
+  <data name="Profile_SaveFailed" xml:space="preserve"><value>The profile could not be saved.</value></data>
+  <data name="ProfileProblem_None" xml:space="preserve"><value>The profile is fine.</value></data>
+  <data name="ProfileProblem_NotJson" xml:space="preserve"><value>The file is not a readable profile.</value></data>
+  <data name="ProfileProblem_TooLarge" xml:space="preserve"><value>The file is too large for a profile.</value></data>
+  <data name="ProfileProblem_NewerFormat" xml:space="preserve"><value>It was made by a newer version of this app.</value></data>
+  <data name="ProfileProblem_MissingName" xml:space="preserve"><value>The profile has no name.</value></data>
+  <data name="ProfileProblem_BadPluginId" xml:space="preserve"><value>A plugin id holds characters an id cannot have.</value></data>
+  <data name="ProfileProblem_BadFolder" xml:space="preserve"><value>A folder name is not safe: it has to stay inside the vault and outside .obsidian.</value></data>
+  <data name="ProfileProblem_BadSettingsFile" xml:space="preserve"><value>It names a settings file a profile may not write.</value></data>
+  <data name="ProfileProblem_BadTemplate" xml:space="preserve"><value>A template name is not safe.</value></data>
+  <data name="ProfileProblem_SecretInSettings" xml:space="preserve"><value>Its settings hold something that looks like a key.</value></data>
+  <data name="Audit_UsesOther" xml:space="preserve"><value>uses {0}</value></data>
+  <data name="Audit_NotUsed" xml:space="preserve"><value>not using this profile</value></data>
+  <data name="Audit_Offline" xml:space="preserve"><value>The drive is not connected, so this vault cannot be compared.</value></data>
+  <data name="Audit_MissingPlugins" xml:space="preserve"><value>Missing plugins: {0}</value></data>
+  <data name="Audit_Unavailable" xml:space="preserve"><value>Not on this PC, cannot be copied: {0}</value></data>
+  <data name="Audit_MissingFolders" xml:space="preserve"><value>Missing folders: {0}</value></data>
+  <data name="Audit_MissingMap" xml:space="preserve"><value>Missing the vault map</value></data>
+  <data name="Audit_OtherPlugins" xml:space="preserve"><value>Other plugins stay as they are: {0}</value></data>
+  <data name="Audit_Complete" xml:space="preserve"><value>Everything in the profile is here.</value></data>
+  <data name="NewVault_Title" xml:space="preserve"><value>New vault</value></data>
+  <data name="NewVault_Name" xml:space="preserve"><value>Name</value></data>
+  <data name="NewVault_Parent" xml:space="preserve"><value>Parent folder</value></data>
+  <data name="NewVault_Browse" xml:space="preserve"><value>Browse</value></data>
+  <data name="NewVault_Profile" xml:space="preserve"><value>Profile</value></data>
+  <data name="NewVault_EmptyProfile" xml:space="preserve"><value>Empty</value></data>
+  <data name="NewVault_Plugins" xml:space="preserve"><value>Plugins</value></data>
+  <data name="NewVault_Size" xml:space="preserve"><value>Size</value></data>
+  <data name="NewVault_Download" xml:space="preserve"><value>Download</value></data>
+  <data name="NewVault_NoPlugins" xml:space="preserve"><value>None</value></data>
+  <data name="NewVault_PluginsFrom" xml:space="preserve"><value>{0}, copied from {1}</value></data>
+  <data name="NewVault_NothingDownload" xml:space="preserve"><value>Nothing</value></data>
+  <data name="NewVault_Unavailable" xml:space="preserve"><value>Not on this PC, so left out: {0}</value></data>
+  <data name="NewVault_Register" xml:space="preserve"><value>Show it in Obsidian's vault list. This waits until you close Obsidian.</value></data>
+  <data name="NewVault_Add" xml:space="preserve"><value>Create vault</value></data>
+  <data name="NewVault_NoUndo" xml:space="preserve"><value>New vaults are not undone. Delete the folder if you do not need it.</value></data>
+  <data name="NewVault_WillCreate" xml:space="preserve"><value>What will be created</value></data>
+  <data name="NewVault_TreeRoot" xml:space="preserve"><value>NewVault</value></data>
+  <data name="NewVault_TreeDefaults" xml:space="preserve"><value>default settings</value></data>
+  <data name="NewVault_TreeSettings" xml:space="preserve"><value>settings, {0}</value></data>
+  <data name="NewVault_TreeMap" xml:space="preserve"><value>vault map, templates</value></data>
+  <data name="NewVault_TreeNote" xml:space="preserve"><value>folder note</value></data>
+  <data name="NewVault_TreeList" xml:space="preserve"><value>Obsidian vault list: + 1 entry</value></data>
+  <data name="NewVaultProblem_None" xml:space="preserve"><value>The name is free.</value></data>
+  <data name="NewVaultProblem_EmptyName" xml:space="preserve"><value>Enter a name.</value></data>
+  <data name="NewVaultProblem_BadName" xml:space="preserve"><value>This name cannot be a folder on Windows.</value></data>
+  <data name="NewVaultProblem_NameTaken" xml:space="preserve"><value>A vault with this name already exists.</value></data>
+  <data name="NewVaultProblem_EmptyParent" xml:space="preserve"><value>Choose a parent folder.</value></data>
+  <data name="NewVaultProblem_RelativeParent" xml:space="preserve"><value>The parent folder has to be a full path.</value></data>
+  <data name="NewVaultProblem_OutsideDemo" xml:space="preserve"><value>A demo stays in its own folder.</value></data>
+  <data name="NewVaultProblem_FolderNotEmpty" xml:space="preserve"><value>This folder already holds files. A new vault needs an empty one.</value></data>
+  <data name="Sync_Title" xml:space="preserve"><value>Settings sync</value></data>
+  <data name="Sync_Source" xml:space="preserve"><value>Source vault</value></data>
+  <data name="Sync_Target" xml:space="preserve"><value>Target vault</value></data>
+  <data name="Sync_PickVault" xml:space="preserve"><value>Choose a vault</value></data>
+  <data name="Sync_Compare" xml:space="preserve"><value>Compare</value></data>
+  <data name="Sync_OfflineNote" xml:space="preserve"><value>Vaults on a drive that is not connected are not listed.</value></data>
+  <data name="Sync_Hint" xml:space="preserve"><value>Choose a vault to copy from and press Compare.</value></data>
+  <data name="Sync_NoFiles" xml:space="preserve"><value>No settings files in these categories.</value></data>
+  <data name="Sync_CompareFailed" xml:space="preserve"><value>Could not compare: {0}. Nothing was changed.</value></data>
+  <data name="Sync_TakeSource" xml:space="preserve"><value>Take source</value></data>
+  <data name="Sync_KeepTarget" xml:space="preserve"><value>Keep target</value></data>
+  <data name="Sync_SelectTip" xml:space="preserve"><value>Copy this file</value></data>
+  <data name="Sync_Add" xml:space="preserve"><value>Copy files</value></data>
+  <data name="SyncDecision_Same" xml:space="preserve"><value>The same in both vaults. Nothing to do.</value></data>
+  <data name="SyncDecision_Copy" xml:space="preserve"><value>Changed in the source, or missing in the target. It will be copied.</value></data>
+  <data name="SyncDecision_KeepTarget" xml:space="preserve"><value>Changed only in the target. It stays as it is.</value></data>
+  <data name="SyncDecision_Conflict" xml:space="preserve"><value>Changed in both, or never compared. Choose which one to keep.</value></data>
+  <data name="SyncDecision_BlockedSecret" xml:space="preserve"><value>Holds something that looks like a key, in {0}. It cannot be copied.</value></data>
+  <data name="SettingsCategory_Hotkeys" xml:space="preserve"><value>Hotkeys</value></data>
+  <data name="SettingsCategory_Appearance" xml:space="preserve"><value>Appearance, themes, snippets</value></data>
+  <data name="SettingsCategory_Editor" xml:space="preserve"><value>Editor</value></data>
+  <data name="SettingsCategory_CorePlugins" xml:space="preserve"><value>Core plugins</value></data>
+  <data name="SettingsCategory_PluginSettings" xml:space="preserve"><value>Plugin settings</value></data>
+  <data name="SettingsFate_NotTouched" xml:space="preserve"><value>settings not touched</value></data>
+  <data name="SettingsFate_Kept" xml:space="preserve"><value>settings kept</value></data>
+  <data name="SettingsFate_None" xml:space="preserve"><value>no settings</value></data>
+  <data name="SettingsFate_Default" xml:space="preserve"><value>default settings</value></data>
+  <data name="SettingsFate_Copied" xml:space="preserve"><value>settings copied</value></data>
+  <data name="Unit_Bytes" xml:space="preserve"><value>{0} B</value></data>
+  <data name="Unit_KB" xml:space="preserve"><value>{0} KB</value></data>
+  <data name="Unit_MB" xml:space="preserve"><value>{0} MB</value></data>
+  <data name="Plural_CopyFiles_One" xml:space="preserve"><value>Copy {0} file</value></data>
+  <data name="Plural_CopyFiles_Few" xml:space="preserve"><value>Copy {0} files</value></data>
+  <data name="Plural_CopyFiles_Many" xml:space="preserve"><value>Copy {0} files</value></data>
+  <data name="Plural_PluginsBehind_One" xml:space="preserve"><value>{0} plugin is behind</value></data>
+  <data name="Plural_PluginsBehind_Few" xml:space="preserve"><value>{0} plugins are behind</value></data>
+  <data name="Plural_PluginsBehind_Many" xml:space="preserve"><value>{0} plugins are behind</value></data>
+  <data name="Plural_Updated_One" xml:space="preserve"><value>{0} updated</value></data>
+  <data name="Plural_Updated_Few" xml:space="preserve"><value>{0} updated</value></data>
+  <data name="Plural_Updated_Many" xml:space="preserve"><value>{0} updated</value></data>
+  <data name="Plural_VaultsMatch_One" xml:space="preserve"><value>{0} vault matches this profile</value></data>
+  <data name="Plural_VaultsMatch_Few" xml:space="preserve"><value>{0} vaults match this profile</value></data>
+  <data name="Plural_VaultsMatch_Many" xml:space="preserve"><value>{0} vaults match this profile</value></data>
+  <data name="Plural_ChangesApplied_One" xml:space="preserve"><value>{0} change applied</value></data>
+  <data name="Plural_ChangesApplied_Few" xml:space="preserve"><value>{0} changes applied</value></data>
+  <data name="Plural_ChangesApplied_Many" xml:space="preserve"><value>{0} changes applied</value></data>
+  <data name="Plural_ChangesWaitingTail_One" xml:space="preserve"><value>{0} still waits</value></data>
+  <data name="Plural_ChangesWaitingTail_Few" xml:space="preserve"><value>{0} still wait</value></data>
+  <data name="Plural_ChangesWaitingTail_Many" xml:space="preserve"><value>{0} still wait</value></data>
+  <data name="Plural_Conflicts_One" xml:space="preserve"><value>{0} conflict to choose</value></data>
+  <data name="Plural_Conflicts_Few" xml:space="preserve"><value>{0} conflicts to choose</value></data>
+  <data name="Plural_Conflicts_Many" xml:space="preserve"><value>{0} conflicts to choose</value></data>
+  <data name="Plural_Files_One" xml:space="preserve"><value>{0} file</value></data>
+  <data name="Plural_Files_Few" xml:space="preserve"><value>{0} files</value></data>
+  <data name="Plural_Files_Many" xml:space="preserve"><value>{0} files</value></data>
+  <data name="Plural_Folders_One" xml:space="preserve"><value>{0} folder</value></data>
+  <data name="Plural_Folders_Few" xml:space="preserve"><value>{0} folders</value></data>
+  <data name="Plural_Folders_Many" xml:space="preserve"><value>{0} folders</value></data>
+  <data name="Plural_Ignored_One" xml:space="preserve"><value>{0} ignored</value></data>
+  <data name="Plural_Ignored_Few" xml:space="preserve"><value>{0} ignored</value></data>
+  <data name="Plural_Ignored_Many" xml:space="preserve"><value>{0} ignored</value></data>
+  <data name="Plural_Lines_One" xml:space="preserve"><value>{0} line</value></data>
+  <data name="Plural_Lines_Few" xml:space="preserve"><value>{0} lines</value></data>
+  <data name="Plural_Lines_Many" xml:space="preserve"><value>{0} lines</value></data>
+  <data name="Plural_NoAnswer_One" xml:space="preserve"><value>{0} gave no answer.</value></data>
+  <data name="Plural_NoAnswer_Few" xml:space="preserve"><value>{0} gave no answer.</value></data>
+  <data name="Plural_NoAnswer_Many" xml:space="preserve"><value>{0} gave no answer.</value></data>
+  <data name="Plural_NotInCatalog_One" xml:space="preserve"><value>{0} not in the catalog</value></data>
+  <data name="Plural_NotInCatalog_Few" xml:space="preserve"><value>{0} not in the catalog</value></data>
+  <data name="Plural_NotInCatalog_Many" xml:space="preserve"><value>{0} not in the catalog</value></data>
+  <data name="Plural_OtherItems_One" xml:space="preserve"><value>{0} other item</value></data>
+  <data name="Plural_OtherItems_Few" xml:space="preserve"><value>{0} other items</value></data>
+  <data name="Plural_OtherItems_Many" xml:space="preserve"><value>{0} other items</value></data>
+  <data name="Plural_Plugins_One" xml:space="preserve"><value>{0} plugin</value></data>
+  <data name="Plural_Plugins_Few" xml:space="preserve"><value>{0} plugins</value></data>
+  <data name="Plural_Plugins_Many" xml:space="preserve"><value>{0} plugins</value></data>
+  <data name="Plural_SmallRequests_One" xml:space="preserve"><value>{0} small request</value></data>
+  <data name="Plural_SmallRequests_Few" xml:space="preserve"><value>{0} small requests</value></data>
+  <data name="Plural_SmallRequests_Many" xml:space="preserve"><value>{0} small requests</value></data>
+  <data name="Plural_Vaults_One" xml:space="preserve"><value>{0} vault</value></data>
+  <data name="Plural_Vaults_Few" xml:space="preserve"><value>{0} vaults</value></data>
+  <data name="Plural_Vaults_Many" xml:space="preserve"><value>{0} vaults</value></data>
+</root>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App_Title" xml:space="preserve"><value>Vault Manager</value></data>
+  <data name="Action_Back" xml:space="preserve"><value>Назад</value></data>
+  <data name="Action_UpdateN" xml:space="preserve"><value>Обновить {0}</value></data>
+  <data name="Action_UpdateAll" xml:space="preserve"><value>Обновить все</value></data>
+  <data name="Head_AllPlugins" xml:space="preserve"><value>Все плагины</value></data>
+  <data name="Head_NoneBehind" xml:space="preserve"><value>Отстающих плагинов нет</value></data>
+  <data name="Head_ScanningShort" xml:space="preserve"><value>Сканирую</value></data>
+  <data name="Menu_More" xml:space="preserve"><value>Ещё</value></data>
+  <data name="Menu_Home" xml:space="preserve"><value>К списку</value></data>
+  <data name="Menu_UndoLast" xml:space="preserve"><value>Отменить последнее изменение ({0})</value></data>
+  <data name="Menu_CopySettings" xml:space="preserve"><value>Скопировать настройки из...</value></data>
+  <data name="Row_In" xml:space="preserve"><value>в {0}</value></data>
+  <data name="Row_Differs" xml:space="preserve"><value>версия та же, файлы разные</value></data>
+  <data name="Row_Online" xml:space="preserve"><value>в сети</value></data>
+  <data name="Row_PluginsOff" xml:space="preserve"><value>плагины, похоже, выключены</value></data>
+  <data name="Row_ListUnreadable" xml:space="preserve"><value>список плагинов не читается</value></data>
+  <data name="Row_ScanError" xml:space="preserve"><value>не удалось просканировать</value></data>
+  <data name="Changes_Updating" xml:space="preserve"><value>Обновляю {0}/{1}</value></data>
+  <data name="Log_Expand" xml:space="preserve"><value>Открыть журнал</value></data>
+  <data name="Log_Collapse" xml:space="preserve"><value>Закрыть журнал</value></data>
+  <data name="Log_PendingDamaged" xml:space="preserve"><value>Ожидавшее изменение не прочитано и убрано.</value></data>
+  <data name="Audit_Matches" xml:space="preserve"><value>соответствует</value></data>
+  <data name="Audit_SummaryMissing" xml:space="preserve"><value>не хватает: {0}</value></data>
+  <data name="Profile_Edit" xml:space="preserve"><value>Изменить</value></data>
+  <data name="Profile_Done" xml:space="preserve"><value>Готово</value></data>
+  <data name="Sync_TitleTo" xml:space="preserve"><value>Настройки для {0}</value></data>
+  <data name="Sync_SaveChoices" xml:space="preserve"><value>Сохранить выбор</value></data>
+  <data name="Language_English" xml:space="preserve"><value>Английский</value></data>
+  <data name="Language_Russian" xml:space="preserve"><value>Русский</value></data>
+  <data name="Window_Minimize" xml:space="preserve"><value>Свернуть</value></data>
+  <data name="Window_Maximize" xml:space="preserve"><value>Развернуть</value></data>
+  <data name="Window_Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="List_And" xml:space="preserve"><value>и</value></data>
+  <data name="Nav_Plugins" xml:space="preserve"><value>Плагины</value></data>
+  <data name="Nav_Profiles" xml:space="preserve"><value>Профили</value></data>
+  <data name="Rail_Vaults" xml:space="preserve"><value>Хранилища</value></data>
+  <data name="Rail_NewVault" xml:space="preserve"><value>+ Новое</value></data>
+  <data name="Rail_NoVaults" xml:space="preserve"><value>Хранилищ пока нет.</value></data>
+  <data name="Rail_Scanning" xml:space="preserve"><value>Сканирую хранилища.</value></data>
+  <data name="Rail_NotScanned" xml:space="preserve"><value>Сканирования ещё не было.</value></data>
+  <data name="Rail_Unreadable" xml:space="preserve"><value>Список хранилищ не читается.</value></data>
+  <data name="Vault_Offline" xml:space="preserve"><value>отключено</value></data>
+  <data name="Vault_Open" xml:space="preserve"><value>откр.</value></data>
+  <data name="Vault_OlderCount" xml:space="preserve"><value>{0} стар.</value></data>
+  <data name="Vault_Unreadable" xml:space="preserve"><value>заблокировано</value></data>
+  <data name="Head_Plugins" xml:space="preserve"><value>Плагины</value></data>
+  <data name="Head_Scanning" xml:space="preserve"><value>Сканирую,</value></data>
+  <data name="Head_ScanFailed" xml:space="preserve"><value>Сканирование не удалось,</value></data>
+  <data name="Head_NotScanned" xml:space="preserve"><value>Сканирования ещё не было,</value></data>
+  <data name="Head_Scanned" xml:space="preserve"><value>Просканировано в {0},</value></data>
+  <data name="Head_CheckedOnline" xml:space="preserve"><value>проверено онлайн в {0}.</value></data>
+  <data name="Head_NotCheckedOnline" xml:space="preserve"><value>онлайн не проверялось.</value></data>
+  <data name="Head_Rescan" xml:space="preserve"><value>Пересканировать</value></data>
+  <data name="Head_CheckOnline" xml:space="preserve"><value>Проверить онлайн</value></data>
+  <data name="Head_NothingNeeded" xml:space="preserve"><value>Всё в порядке</value></data>
+  <data name="Empty_NoVaults" xml:space="preserve"><value>Хранилищ не найдено. Откройте хранилище в Obsidian хотя бы раз или добавьте папку здесь.</value></data>
+  <data name="Empty_Unreadable" xml:space="preserve"><value>Не удалось прочитать список хранилищ Obsidian. Файл может быть повреждён. Ничего не изменено.</value></data>
+  <data name="Empty_AddFolder" xml:space="preserve"><value>Добавить папку</value></data>
+  <data name="Empty_TryAgain" xml:space="preserve"><value>Повторить</value></data>
+  <data name="Status_Waiting" xml:space="preserve"><value>Ждёт</value></data>
+  <data name="Action_Add" xml:space="preserve"><value>Добавить</value></data>
+  <data name="Action_PlusAdd" xml:space="preserve"><value>+ Добавить</value></data>
+  <data name="Action_AddMissing" xml:space="preserve"><value>Добавить недостающее</value></data>
+  <data name="Action_AddPlugin" xml:space="preserve"><value>Добавить плагин</value></data>
+  <data name="Action_CatalogPage" xml:space="preserve"><value>Страница в каталоге</value></data>
+  <data name="Action_Ignore" xml:space="preserve"><value>Скрыть</value></data>
+  <data name="Action_KeepAsIs" xml:space="preserve"><value>Оставить как есть</value></data>
+  <data name="Action_OpenInObsidian" xml:space="preserve"><value>Открыть в Obsidian</value></data>
+  <data name="Action_Restore" xml:space="preserve"><value>Вернуть</value></data>
+  <data name="Action_StopUsing" xml:space="preserve"><value>Отвязать</value></data>
+  <data name="Action_TurnOff" xml:space="preserve"><value>Выключить</value></data>
+  <data name="Action_TurnOn" xml:space="preserve"><value>Включить</value></data>
+  <data name="Action_Update" xml:space="preserve"><value>Обновить</value></data>
+  <data name="Action_UpdateVaults" xml:space="preserve"><value>Обновить: {0}</value></data>
+  <data name="Action_UseProfile" xml:space="preserve"><value>Использовать профиль</value></data>
+  <data name="Attn_OlderHow" xml:space="preserve"><value>Самая новая копия: {0} в {1}. Скачивать ничего не нужно.</value></data>
+  <data name="Attn_OlderHowKept" xml:space="preserve"><value>Самая новая копия: {0} в {1}. Скачивать ничего не нужно, настройки останутся.</value></data>
+  <data name="Attn_Differs" xml:space="preserve"><value>{0} версии {1} в {2}, но файлы разные</value></data>
+  <data name="Attn_DiffersHow" xml:space="preserve"><value>Номер версии совпадает, а main.js нет. Одну из копий могли изменить вручную или чем-то ещё. Проверьте её, прежде чем копировать.</value></data>
+  <data name="Attn_NewerHow" xml:space="preserve"><value>Самая новая копия: {0}. Размер будет показан до начала загрузки.</value></data>
+  <data name="Attn_OffHow" xml:space="preserve"><value>Включите их в Obsidian: Настройки, Сторонние плагины. Этот шаг можете сделать только вы.</value></data>
+  <data name="Attn_GapMap" xml:space="preserve"><value>карта хранилища</value></data>
+  <data name="Attn_GapHow" xml:space="preserve"><value>Это часть профиля {0}. Пропустите, если проекту это не нужно.</value></data>
+  <data name="Attn_GapHowUnavailable" xml:space="preserve"><value>Это часть профиля {0}. На этом компьютере нет: {1}.</value></data>
+  <data name="Attn_ListUnreadableHow" xml:space="preserve"><value>Файл может быть повреждён. Изменения в этом хранилище заблокированы, пока он не будет исправлен.</value></data>
+  <data name="Attn_ScanErrorHow" xml:space="preserve"><value>Причина: {0}. Пересканируйте, когда диск вернётся.</value></data>
+  <data name="Legend_Same" xml:space="preserve"><value>Как новейшая копия</value></data>
+  <data name="Legend_Older" xml:space="preserve"><value>Старее, с версией</value></data>
+  <data name="Legend_Off" xml:space="preserve"><value>Выключен</value></data>
+  <data name="Legend_None" xml:space="preserve"><value>Нет, наведите, чтобы добавить</value></data>
+  <data name="Matrix_Filter" xml:space="preserve"><value>Фильтр плагинов</value></data>
+  <data name="Matrix_Plugin" xml:space="preserve"><value>Плагин</value></data>
+  <data name="Matrix_Newest" xml:space="preserve"><value>Новейшая</value></data>
+  <data name="Matrix_AddTip" xml:space="preserve"><value>Добавить {0} в {1}</value></data>
+  <data name="Matrix_DetailOlder" xml:space="preserve"><value>Старее в {0}. Копируется из {1}, скачивать ничего не нужно.</value></data>
+  <data name="Matrix_DetailOnly" xml:space="preserve"><value>Установлен только в {0}.</value></data>
+  <data name="Matrix_DetailSame" xml:space="preserve"><value>Одна версия в {0}, файлы одинаковые.</value></data>
+  <data name="Matrix_DetailNoFiles" xml:space="preserve"><value>Числится включённым, но файлов нет ни в одном хранилище.</value></data>
+  <data name="Matrix_DetailDiffers" xml:space="preserve"><value>Номер версии один, а файлы разные. Проверьте, прежде чем копировать.</value></data>
+  <data name="Matrix_OnlineVersion" xml:space="preserve"><value>{0} в сети</value></data>
+  <data name="Badge_NotInCatalog" xml:space="preserve"><value>Нет в каталоге</value></data>
+  <data name="Cell_Current" xml:space="preserve"><value>Как самая новая копия</value></data>
+  <data name="Cell_Older" xml:space="preserve"><value>Старее самой новой копии</value></data>
+  <data name="Cell_Off" xml:space="preserve"><value>Установлен, выключен</value></data>
+  <data name="Cell_Broken" xml:space="preserve"><value>Числится включённым, но файлов нет</value></data>
+  <data name="Cell_Empty" xml:space="preserve"><value>Не установлен</value></data>
+  <data name="Cell_Waiting" xml:space="preserve"><value>Ждёт</value></data>
+  <data name="Cell_Offline" xml:space="preserve"><value>Диск не подключён</value></data>
+  <data name="Cell_Blocked" xml:space="preserve"><value>Хранилище заблокировано: список плагинов не читается</value></data>
+  <data name="Changes_Retry" xml:space="preserve"><value>Повторить</value></data>
+  <data name="Changes_Remove" xml:space="preserve"><value>Убрать</value></data>
+  <data name="Line_Add" xml:space="preserve"><value>добавить {0}</value></data>
+  <data name="Line_From" xml:space="preserve"><value>из {0}</value></data>
+  <data name="Line_Download" xml:space="preserve"><value>скачать {0}</value></data>
+  <data name="Line_TurnOn" xml:space="preserve"><value>включить</value></data>
+  <data name="Line_TurnOff" xml:space="preserve"><value>выключить</value></data>
+  <data name="Line_FilesStay" xml:space="preserve"><value>файлы остаются на диске</value></data>
+  <data name="Line_SettingsNew" xml:space="preserve"><value>новый файл</value></data>
+  <data name="Line_SettingsReplace" xml:space="preserve"><value>заменит файл, копия сохранится</value></data>
+  <data name="Line_Parts" xml:space="preserve"><value>Папки и заметки профиля {0}</value></data>
+  <data name="Line_PartsDetail" xml:space="preserve"><value>только добавляет, заметки остаются</value></data>
+  <data name="Line_EmptyVault" xml:space="preserve"><value>пустое хранилище</value></data>
+  <data name="Line_Register" xml:space="preserve"><value>добавить в список хранилищ Obsidian</value></data>
+  <data name="Result_Failed" xml:space="preserve"><value>Сбой: {0}</value></data>
+  <data name="Result_Waiting" xml:space="preserve"><value>Ждёт: {0}</value></data>
+  <data name="Result_Review" xml:space="preserve"><value>Изменилось: {0}. Ничего не перезаписано. Повтор возьмёт то, что есть сейчас.</value></data>
+  <data name="ChangeStatus_Done" xml:space="preserve"><value>Готово</value></data>
+  <data name="ChangeStatus_Failed" xml:space="preserve"><value>Сбой</value></data>
+  <data name="ChangeStatus_Waiting" xml:space="preserve"><value>Ждёт</value></data>
+  <data name="ChangeStatus_NeedsReview" xml:space="preserve"><value>Нужна проверка</value></data>
+  <data name="ChangeNote_None" xml:space="preserve"><value>Без замечаний</value></data>
+  <data name="ChangeNote_SettingsSkippedSecret" xml:space="preserve"><value>Настройки не скопированы: в них есть что-то похожее на ключ.</value></data>
+  <data name="ChangeFailure_None" xml:space="preserve"><value>проблем нет</value></data>
+  <data name="ChangeFailure_VaultOffline" xml:space="preserve"><value>диск не подключён</value></data>
+  <data name="ChangeFailure_VaultOpen" xml:space="preserve"><value>хранилище открыто в Obsidian</value></data>
+  <data name="ChangeFailure_ObsidianRunning" xml:space="preserve"><value>Obsidian запущен</value></data>
+  <data name="ChangeFailure_SourceMissing" xml:space="preserve"><value>исходной копии больше нет</value></data>
+  <data name="ChangeFailure_SourceChanged" xml:space="preserve"><value>исходная копия изменилась после добавления</value></data>
+  <data name="ChangeFailure_TargetChanged" xml:space="preserve"><value>копия в этом хранилище изменилась после добавления</value></data>
+  <data name="ChangeFailure_TargetNotEmpty" xml:space="preserve"><value>в папке уже есть файлы</value></data>
+  <data name="ChangeFailure_ListUnreadable" xml:space="preserve"><value>список включённых плагинов не читается</value></data>
+  <data name="ChangeFailure_RegistryUnreadable" xml:space="preserve"><value>список хранилищ Obsidian не читается</value></data>
+  <data name="ChangeFailure_SecretInSettings" xml:space="preserve"><value>в файле есть что-то похожее на ключ</value></data>
+  <data name="ChangeFailure_DownloadFailed" xml:space="preserve"><value>загрузка не удалась</value></data>
+  <data name="ChangeFailure_VerifyFailed" xml:space="preserve"><value>копия не совпала с источником</value></data>
+  <data name="ChangeFailure_NothingToUndo" xml:space="preserve"><value>отменять нечего</value></data>
+  <data name="ChangeFailure_RecoveryNeeded" xml:space="preserve"><value>старую копию не удалось вернуть, она лежит в .obsidian\.vault-manager-staging</value></data>
+  <data name="ChangeFailure_Unexpected" xml:space="preserve"><value>произошло что-то непредвиденное</value></data>
+  <data name="ChangeFailure_WriteFailed" xml:space="preserve"><value>не удалось записать на диск</value></data>
+  <data name="Undo_Button" xml:space="preserve"><value>Отменить</value></data>
+  <data name="Undo_Last" xml:space="preserve"><value>{0}, {1}</value></data>
+  <data name="Undo_Blocked" xml:space="preserve"><value>Не выполнено: {0}. Повторите отмену, когда станет можно.</value></data>
+  <data name="Undo_Parts" xml:space="preserve"><value>Папки и заметки [{0}]</value></data>
+  <data name="Log_Caption" xml:space="preserve"><value>Журнал · что и на что меняется</value></data>
+  <data name="Log_Scanned" xml:space="preserve"><value>Просканировано: {0} и {1}</value></data>
+  <data name="Log_ScanFailed" xml:space="preserve"><value>Сканирование не удалось: {0}. Ничего не изменено.</value></data>
+  <data name="Log_ApplyStopped" xml:space="preserve"><value>Остановлено: {0}. Проверьте каждую строку.</value></data>
+  <data name="Log_NewVaultNoUndo" xml:space="preserve"><value>Создание хранилища не отменяется. Удалите папку, если она не нужна.</value></data>
+  <data name="Log_LineFailed" xml:space="preserve"><value>{0}: сбой, {1}</value></data>
+  <data name="Log_LineWaiting" xml:space="preserve"><value>{0}: ждёт, {1}</value></data>
+  <data name="Log_LineReview" xml:space="preserve"><value>{0}: нужна проверка, {1}</value></data>
+  <data name="Log_Undone" xml:space="preserve"><value>{0}: возвращено</value></data>
+  <data name="Log_UndoBlocked" xml:space="preserve"><value>{0}: не удалось вернуть, {1}</value></data>
+  <data name="Log_UndoDone" xml:space="preserve"><value>Восстановлено из сохранённой копии.</value></data>
+  <data name="Log_Unexpected" xml:space="preserve"><value>Что-то пошло не так: {0}. Проверьте диск и пересканируйте.</value></data>
+  <data name="Log_Opened" xml:space="preserve"><value>Открыто: {0}</value></data>
+  <data name="Log_OpenFailed" xml:space="preserve"><value>Не удалось открыть {0}</value></data>
+  <data name="Log_Checked" xml:space="preserve"><value>Проверено онлайн: ответили {0}, {1}.</value></data>
+  <data name="Log_CheckStopped" xml:space="preserve"><value>Проверка онлайн остановлена.</value></data>
+  <data name="Log_ProfileCreated" xml:space="preserve"><value>Профиль {0} создан</value></data>
+  <data name="Log_ProfileDeleted" xml:space="preserve"><value>Профиль {0} удалён</value></data>
+  <data name="Log_ProfileImported" xml:space="preserve"><value>Профиль {0} импортирован</value></data>
+  <data name="Log_ProfileExported" xml:space="preserve"><value>Профиль {0} экспортирован в {1}</value></data>
+  <data name="Log_ProfileBound" xml:space="preserve"><value>{0} теперь использует профиль {1}</value></data>
+  <data name="Demo_Mark" xml:space="preserve"><value>Демо</value></data>
+  <data name="Demo_ObsidianRunning" xml:space="preserve"><value>Obsidian: запущен</value></data>
+  <data name="Demo_ObsidianClosed" xml:space="preserve"><value>Obsidian: закрыт</value></data>
+  <data name="Demo_Toggle" xml:space="preserve"><value>Переключить</value></data>
+  <data name="Demo_WouldOpen" xml:space="preserve"><value>Демо: здесь открылось бы {0}</value></data>
+  <data name="Demo_LogClosed" xml:space="preserve"><value>Демо: Obsidian закрыт</value></data>
+  <data name="Demo_LogOpened" xml:space="preserve"><value>Демо: Obsidian открыт</value></data>
+  <data name="Online_Title" xml:space="preserve"><value>Проверка онлайн</value></data>
+  <data name="Online_AskingSize" xml:space="preserve"><value>Узнаю размер каталога.</value></data>
+  <data name="Online_Question" xml:space="preserve"><value>Будет загружен каталог плагинов, {0}, затем {1}, по одному на установленный плагин. Продолжить?</value></data>
+  <data name="Online_QuestionNoSize" xml:space="preserve"><value>Сервер не сообщил размер каталога плагинов. После него будет {0}, по одному на установленный плагин. Продолжить?</value></data>
+  <data name="Online_Checking" xml:space="preserve"><value>Проверяю.</value></data>
+  <data name="Online_Failed" xml:space="preserve"><value>Не удалось связаться с каталогом. Ничего не изменено.</value></data>
+  <data name="Online_Confirm" xml:space="preserve"><value>Проверить</value></data>
+  <data name="Online_Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="Offer_CheckSize" xml:space="preserve"><value>Узнать размер</value></data>
+  <data name="Offer_Asking" xml:space="preserve"><value>Узнаю</value></data>
+  <data name="Offer_Download" xml:space="preserve"><value>Скачать {0}</value></data>
+  <data name="Offer_AddSized" xml:space="preserve"><value>Добавить {0}</value></data>
+  <data name="Offer_Failed" xml:space="preserve"><value>Не удалось узнать размер. Ничего не скачано.</value></data>
+  <data name="Offer_TryAgain" xml:space="preserve"><value>Повторить</value></data>
+  <data name="Picker_Title" xml:space="preserve"><value>Добавить плагин в {0}</value></data>
+  <data name="Picker_Filter" xml:space="preserve"><value>Фильтр плагинов, Enter добавляет первый</value></data>
+  <data name="Picker_CopySettings" xml:space="preserve"><value>Копировать и настройки, если в них нет ключей</value></data>
+  <data name="Picker_FromCatalog" xml:space="preserve"><value>Из каталога</value></data>
+  <data name="Picker_RowSub" xml:space="preserve"><value>из {0}, {1}</value></data>
+  <data name="Picker_CatalogSub" xml:space="preserve"><value>{0}, размер пока неизвестен</value></data>
+  <data name="Picker_CatalogSized" xml:space="preserve"><value>{0}, скачать {1}</value></data>
+  <data name="Picker_CatalogMore" xml:space="preserve"><value>Ещё {0}. Найдите через фильтр.</value></data>
+  <data name="Picker_AllHere" xml:space="preserve"><value>Все плагины с этого компьютера уже здесь.</value></data>
+  <data name="Picker_NoMatch" xml:space="preserve"><value>Среди плагинов на этом компьютере совпадений нет.</value></data>
+  <data name="Picker_NoMatchCatalog" xml:space="preserve"><value>Совпадений нет ни на компьютере, ни в каталоге.</value></data>
+  <data name="Picker_Note" xml:space="preserve"><value>Показаны только плагины из других хранилищ. Скачивать ничего не нужно.</value></data>
+  <data name="Picker_NoteCatalog" xml:space="preserve"><value>Плагины из других хранилищ ничего не стоят. Плагины из каталога сначала покажут размер.</value></data>
+  <data name="VaultPage_ProfileLine" xml:space="preserve"><value>Профиль {0}: {1}</value></data>
+  <data name="VaultPage_On" xml:space="preserve"><value>вкл</value></data>
+  <data name="VaultPage_Off" xml:space="preserve"><value>выкл</value></data>
+  <data name="VaultPage_FilesMissing" xml:space="preserve"><value>файлов нет</value></data>
+  <data name="VaultPage_From" xml:space="preserve"><value>Из {0}. Скачивать ничего не нужно.</value></data>
+  <data name="VaultPage_FromKept" xml:space="preserve"><value>Из {0}. Скачивать ничего не нужно, настройки останутся.</value></data>
+  <data name="VaultPage_Empty" xml:space="preserve"><value>В этом хранилище пока нет плагинов. Кнопка «Добавить плагин» скопирует его из другого хранилища.</value></data>
+  <data name="VaultPage_EmptyOffline" xml:space="preserve"><value>Пока диск отключён, прочитать ничего нельзя. Добавленные изменения дождутся его.</value></data>
+  <data name="VaultPage_EmptyBlocked" xml:space="preserve"><value>Плагины этого хранилища нельзя показать, пока оно не читается.</value></data>
+  <data name="Banner_Offline" xml:space="preserve"><value>Диск не подключён</value></data>
+  <data name="Banner_OfflineHow" xml:space="preserve"><value>Хранилище остаётся в списке. Оно не может быть источником копий, а изменения для него ждут возвращения диска.</value></data>
+  <data name="Banner_Open" xml:space="preserve"><value>Открыто в Obsidian</value></data>
+  <data name="Banner_OpenHow" xml:space="preserve"><value>Изменения ждут, пока вы его не закроете: Obsidian перезаписывает настройки при закрытии хранилища.</value></data>
+  <data name="Banner_ListUnreadable" xml:space="preserve"><value>Список включённых плагинов не читается</value></data>
+  <data name="Banner_ListUnreadableHow" xml:space="preserve"><value>Файл может быть повреждён. Изменения плагинов здесь заблокированы, файл остаётся как есть.</value></data>
+  <data name="Banner_ScanError" xml:space="preserve"><value>Не удалось просканировать это хранилище</value></data>
+  <data name="Banner_ScanErrorHow" xml:space="preserve"><value>Причина: {0}. Пересканируйте, когда диск вернётся.</value></data>
+  <data name="Banner_OffHow" xml:space="preserve"><value>Включите их в Obsidian: Настройки, Сторонние плагины. До этого добавленные плагины не будут работать.</value></data>
+  <data name="Banner_UnknownHow" xml:space="preserve"><value>Obsidian хранит это у себя, и сейчас прочитать не удалось. Проверьте в Obsidian.</value></data>
+  <data name="CommunityPlugins_Unknown" xml:space="preserve"><value>Неизвестно, включены ли сторонние плагины</value></data>
+  <data name="CommunityPlugins_On" xml:space="preserve"><value>Сторонние плагины включены</value></data>
+  <data name="CommunityPlugins_Off" xml:space="preserve"><value>Здесь выключены сторонние плагины</value></data>
+  <data name="CommunityPlugins_NeverEnabled" xml:space="preserve"><value>Здесь, похоже, выключены сторонние плагины</value></data>
+  <data name="Profile_Pick" xml:space="preserve"><value>Профиль</value></data>
+  <data name="Profile_ReadOnlyNote" xml:space="preserve"><value>Встроенный, только для чтения. Чтобы изменить, сделайте копию.</value></data>
+  <data name="Profile_New" xml:space="preserve"><value>Новый профиль</value></data>
+  <data name="Profile_Duplicate" xml:space="preserve"><value>Копия</value></data>
+  <data name="Profile_Delete" xml:space="preserve"><value>Удалить</value></data>
+  <data name="Profile_Import" xml:space="preserve"><value>Импорт</value></data>
+  <data name="Profile_Export" xml:space="preserve"><value>Экспорт</value></data>
+  <data name="Profile_NewName" xml:space="preserve"><value>Новый профиль</value></data>
+  <data name="Profile_CopyName" xml:space="preserve"><value>{0}, копия</value></data>
+  <data name="Profile_DeleteQuestion" xml:space="preserve"><value>Удалить этот профиль? Хранилища перестанут его использовать, но в них ничего не изменится.</value></data>
+  <data name="Profile_Name" xml:space="preserve"><value>Название</value></data>
+  <data name="Profile_Description" xml:space="preserve"><value>Описание</value></data>
+  <data name="Profile_FolderNotes" xml:space="preserve"><value>Заметка в каждой папке</value></data>
+  <data name="Profile_VaultMap" xml:space="preserve"><value>Карта хранилища</value></data>
+  <data name="Profile_Plugins" xml:space="preserve"><value>Плагины профиля</value></data>
+  <data name="Profile_FromThisPc" xml:space="preserve"><value>С этого компьютера</value></data>
+  <data name="Profile_PluginId" xml:space="preserve"><value>Id плагина</value></data>
+  <data name="Profile_Folders" xml:space="preserve"><value>Папки</value></data>
+  <data name="Profile_NewFolder" xml:space="preserve"><value>Новая папка</value></data>
+  <data name="Profile_AlsoSetUp" xml:space="preserve"><value>Что ещё настраивается</value></data>
+  <data name="Profile_AlsoLine1" xml:space="preserve"><value>Структура папок с заметкой в каждой и карта хранилища</value></data>
+  <data name="Profile_AlsoLine2" xml:space="preserve"><value>Шаблоны заметок и обязательные поля</value></data>
+  <data name="Profile_AlsoLine3" xml:space="preserve"><value>Встроенные плагины, настройки редактора и внешнего вида</value></data>
+  <data name="Profile_Never" xml:space="preserve"><value>Не копируется никогда: открытые вкладки, настройки плагина Git, кэши плагинов, настройки с паролем или ключом.</value></data>
+  <data name="Profile_Rejected" xml:space="preserve"><value>Файл не импортирован. {0} Ничего не изменено.</value></data>
+  <data name="Profile_ImportFailed" xml:space="preserve"><value>Файл не читается. Ничего не изменено.</value></data>
+  <data name="Profile_ExportFailed" xml:space="preserve"><value>Не удалось записать профиль в это место.</value></data>
+  <data name="Profile_FileType" xml:space="preserve"><value>Профиль хранилища</value></data>
+  <data name="Profile_SaveFailed" xml:space="preserve"><value>Не удалось сохранить профиль.</value></data>
+  <data name="ProfileProblem_None" xml:space="preserve"><value>С профилем всё в порядке.</value></data>
+  <data name="ProfileProblem_NotJson" xml:space="preserve"><value>Файл не является профилем.</value></data>
+  <data name="ProfileProblem_TooLarge" xml:space="preserve"><value>Файл слишком большой для профиля.</value></data>
+  <data name="ProfileProblem_NewerFormat" xml:space="preserve"><value>Он создан более новой версией приложения.</value></data>
+  <data name="ProfileProblem_MissingName" xml:space="preserve"><value>У профиля нет названия.</value></data>
+  <data name="ProfileProblem_BadPluginId" xml:space="preserve"><value>В id плагина есть недопустимые символы.</value></data>
+  <data name="ProfileProblem_BadFolder" xml:space="preserve"><value>Недопустимое имя папки: она должна быть внутри хранилища и вне .obsidian.</value></data>
+  <data name="ProfileProblem_BadSettingsFile" xml:space="preserve"><value>В нём указан файл настроек, который профиль записывать не может.</value></data>
+  <data name="ProfileProblem_BadTemplate" xml:space="preserve"><value>Недопустимое имя шаблона.</value></data>
+  <data name="ProfileProblem_SecretInSettings" xml:space="preserve"><value>В его настройках есть что-то похожее на ключ.</value></data>
+  <data name="Audit_UsesOther" xml:space="preserve"><value>использует {0}</value></data>
+  <data name="Audit_NotUsed" xml:space="preserve"><value>не использует этот профиль</value></data>
+  <data name="Audit_Offline" xml:space="preserve"><value>Диск не подключён, поэтому сравнить это хранилище нельзя.</value></data>
+  <data name="Audit_MissingPlugins" xml:space="preserve"><value>Не хватает плагинов: {0}</value></data>
+  <data name="Audit_Unavailable" xml:space="preserve"><value>Нет на этом компьютере, скопировать нельзя: {0}</value></data>
+  <data name="Audit_MissingFolders" xml:space="preserve"><value>Не хватает папок: {0}</value></data>
+  <data name="Audit_MissingMap" xml:space="preserve"><value>Не хватает карты хранилища</value></data>
+  <data name="Audit_OtherPlugins" xml:space="preserve"><value>Другие плагины останутся как есть: {0}</value></data>
+  <data name="Audit_Complete" xml:space="preserve"><value>Всё из профиля на месте.</value></data>
+  <data name="NewVault_Title" xml:space="preserve"><value>Новое хранилище</value></data>
+  <data name="NewVault_Name" xml:space="preserve"><value>Название</value></data>
+  <data name="NewVault_Parent" xml:space="preserve"><value>Родительская папка</value></data>
+  <data name="NewVault_Browse" xml:space="preserve"><value>Обзор</value></data>
+  <data name="NewVault_Profile" xml:space="preserve"><value>Профиль</value></data>
+  <data name="NewVault_EmptyProfile" xml:space="preserve"><value>Пустое</value></data>
+  <data name="NewVault_Plugins" xml:space="preserve"><value>Плагины</value></data>
+  <data name="NewVault_Size" xml:space="preserve"><value>Размер</value></data>
+  <data name="NewVault_Download" xml:space="preserve"><value>Загрузка</value></data>
+  <data name="NewVault_NoPlugins" xml:space="preserve"><value>Нет</value></data>
+  <data name="NewVault_PluginsFrom" xml:space="preserve"><value>{0}, копии из {1}</value></data>
+  <data name="NewVault_NothingDownload" xml:space="preserve"><value>Ничего</value></data>
+  <data name="NewVault_Unavailable" xml:space="preserve"><value>Нет на этом компьютере, поэтому пропущены: {0}</value></data>
+  <data name="NewVault_Register" xml:space="preserve"><value>Показать в списке хранилищ Obsidian. Запись добавится после закрытия Obsidian.</value></data>
+  <data name="NewVault_Add" xml:space="preserve"><value>Создать хранилище</value></data>
+  <data name="NewVault_NoUndo" xml:space="preserve"><value>Создание хранилища не отменяется. Удалите папку, если она не нужна.</value></data>
+  <data name="NewVault_WillCreate" xml:space="preserve"><value>Что будет создано</value></data>
+  <data name="NewVault_TreeRoot" xml:space="preserve"><value>НовоеХранилище</value></data>
+  <data name="NewVault_TreeDefaults" xml:space="preserve"><value>настройки по умолчанию</value></data>
+  <data name="NewVault_TreeSettings" xml:space="preserve"><value>настройки, {0}</value></data>
+  <data name="NewVault_TreeMap" xml:space="preserve"><value>карта, шаблоны</value></data>
+  <data name="NewVault_TreeNote" xml:space="preserve"><value>заметка папки</value></data>
+  <data name="NewVault_TreeList" xml:space="preserve"><value>Список хранилищ Obsidian: + 1 запись</value></data>
+  <data name="NewVaultProblem_None" xml:space="preserve"><value>Название свободно.</value></data>
+  <data name="NewVaultProblem_EmptyName" xml:space="preserve"><value>Введите название.</value></data>
+  <data name="NewVaultProblem_BadName" xml:space="preserve"><value>Такое имя не может быть папкой в Windows.</value></data>
+  <data name="NewVaultProblem_NameTaken" xml:space="preserve"><value>Хранилище с таким названием уже есть.</value></data>
+  <data name="NewVaultProblem_EmptyParent" xml:space="preserve"><value>Выберите родительскую папку.</value></data>
+  <data name="NewVaultProblem_RelativeParent" xml:space="preserve"><value>Родительская папка должна быть указана полным путём.</value></data>
+  <data name="NewVaultProblem_OutsideDemo" xml:space="preserve"><value>Демо остаётся в своей папке.</value></data>
+  <data name="NewVaultProblem_FolderNotEmpty" xml:space="preserve"><value>В этой папке уже есть файлы. Новому хранилищу нужна пустая.</value></data>
+  <data name="Sync_Title" xml:space="preserve"><value>Синхронизация настроек</value></data>
+  <data name="Sync_Source" xml:space="preserve"><value>Источник</value></data>
+  <data name="Sync_Target" xml:space="preserve"><value>Цель</value></data>
+  <data name="Sync_PickVault" xml:space="preserve"><value>Выберите хранилище</value></data>
+  <data name="Sync_Compare" xml:space="preserve"><value>Сравнить</value></data>
+  <data name="Sync_OfflineNote" xml:space="preserve"><value>Хранилища на отключённых дисках в списке не показаны.</value></data>
+  <data name="Sync_Hint" xml:space="preserve"><value>Выберите хранилище-источник и нажмите «Сравнить».</value></data>
+  <data name="Sync_NoFiles" xml:space="preserve"><value>В этих категориях нет файлов настроек.</value></data>
+  <data name="Sync_CompareFailed" xml:space="preserve"><value>Сравнить не удалось: {0}. Ничего не изменено.</value></data>
+  <data name="Sync_TakeSource" xml:space="preserve"><value>Взять источник</value></data>
+  <data name="Sync_KeepTarget" xml:space="preserve"><value>Оставить цель</value></data>
+  <data name="Sync_SelectTip" xml:space="preserve"><value>Скопировать этот файл</value></data>
+  <data name="Sync_Add" xml:space="preserve"><value>Скопировать файлы</value></data>
+  <data name="SyncDecision_Same" xml:space="preserve"><value>В обоих хранилищах одинаково. Делать нечего.</value></data>
+  <data name="SyncDecision_Copy" xml:space="preserve"><value>Изменён в источнике или отсутствует в цели. Будет скопирован.</value></data>
+  <data name="SyncDecision_KeepTarget" xml:space="preserve"><value>Изменён только в цели. Останется как есть.</value></data>
+  <data name="SyncDecision_Conflict" xml:space="preserve"><value>Изменён в обоих или ещё не сравнивался. Выберите, что оставить.</value></data>
+  <data name="SyncDecision_BlockedSecret" xml:space="preserve"><value>Есть что-то похожее на ключ, в поле {0}. Копировать нельзя.</value></data>
+  <data name="SettingsCategory_Hotkeys" xml:space="preserve"><value>Горячие клавиши</value></data>
+  <data name="SettingsCategory_Appearance" xml:space="preserve"><value>Внешний вид, темы, сниппеты</value></data>
+  <data name="SettingsCategory_Editor" xml:space="preserve"><value>Редактор</value></data>
+  <data name="SettingsCategory_CorePlugins" xml:space="preserve"><value>Встроенные плагины</value></data>
+  <data name="SettingsCategory_PluginSettings" xml:space="preserve"><value>Настройки плагинов</value></data>
+  <data name="SettingsFate_NotTouched" xml:space="preserve"><value>настройки не меняются</value></data>
+  <data name="SettingsFate_Kept" xml:space="preserve"><value>настройки останутся</value></data>
+  <data name="SettingsFate_None" xml:space="preserve"><value>без настроек</value></data>
+  <data name="SettingsFate_Default" xml:space="preserve"><value>настройки по умолчанию</value></data>
+  <data name="SettingsFate_Copied" xml:space="preserve"><value>настройки копируются</value></data>
+  <data name="Unit_Bytes" xml:space="preserve"><value>{0} Б</value></data>
+  <data name="Unit_KB" xml:space="preserve"><value>{0} КБ</value></data>
+  <data name="Unit_MB" xml:space="preserve"><value>{0} МБ</value></data>
+  <data name="Plural_CopyFiles_One" xml:space="preserve"><value>Скопировать {0} файл</value></data>
+  <data name="Plural_CopyFiles_Few" xml:space="preserve"><value>Скопировать {0} файла</value></data>
+  <data name="Plural_CopyFiles_Many" xml:space="preserve"><value>Скопировать {0} файлов</value></data>
+  <data name="Plural_PluginsBehind_One" xml:space="preserve"><value>{0} плагин отстаёт</value></data>
+  <data name="Plural_PluginsBehind_Few" xml:space="preserve"><value>{0} плагина отстают</value></data>
+  <data name="Plural_PluginsBehind_Many" xml:space="preserve"><value>{0} плагинов отстают</value></data>
+  <data name="Plural_Updated_One" xml:space="preserve"><value>обновлено: {0}</value></data>
+  <data name="Plural_Updated_Few" xml:space="preserve"><value>обновлено: {0}</value></data>
+  <data name="Plural_Updated_Many" xml:space="preserve"><value>обновлено: {0}</value></data>
+  <data name="Plural_VaultsMatch_One" xml:space="preserve"><value>Профилю соответствует {0} хранилище</value></data>
+  <data name="Plural_VaultsMatch_Few" xml:space="preserve"><value>Профилю соответствуют {0} хранилища</value></data>
+  <data name="Plural_VaultsMatch_Many" xml:space="preserve"><value>Профилю соответствуют {0} хранилищ</value></data>
+  <data name="Plural_ChangesApplied_One" xml:space="preserve"><value>{0} изменение применено</value></data>
+  <data name="Plural_ChangesApplied_Few" xml:space="preserve"><value>{0} изменения применены</value></data>
+  <data name="Plural_ChangesApplied_Many" xml:space="preserve"><value>{0} изменений применено</value></data>
+  <data name="Plural_ChangesWaitingTail_One" xml:space="preserve"><value>{0} ещё ждёт</value></data>
+  <data name="Plural_ChangesWaitingTail_Few" xml:space="preserve"><value>{0} ещё ждут</value></data>
+  <data name="Plural_ChangesWaitingTail_Many" xml:space="preserve"><value>{0} ещё ждут</value></data>
+  <data name="Plural_Conflicts_One" xml:space="preserve"><value>{0} конфликт на выбор</value></data>
+  <data name="Plural_Conflicts_Few" xml:space="preserve"><value>{0} конфликта на выбор</value></data>
+  <data name="Plural_Conflicts_Many" xml:space="preserve"><value>{0} конфликтов на выбор</value></data>
+  <data name="Plural_Files_One" xml:space="preserve"><value>{0} файл</value></data>
+  <data name="Plural_Files_Few" xml:space="preserve"><value>{0} файла</value></data>
+  <data name="Plural_Files_Many" xml:space="preserve"><value>{0} файлов</value></data>
+  <data name="Plural_Folders_One" xml:space="preserve"><value>{0} папка</value></data>
+  <data name="Plural_Folders_Few" xml:space="preserve"><value>{0} папки</value></data>
+  <data name="Plural_Folders_Many" xml:space="preserve"><value>{0} папок</value></data>
+  <data name="Plural_Ignored_One" xml:space="preserve"><value>скрыто: {0}</value></data>
+  <data name="Plural_Ignored_Few" xml:space="preserve"><value>скрыто: {0}</value></data>
+  <data name="Plural_Ignored_Many" xml:space="preserve"><value>скрыто: {0}</value></data>
+  <data name="Plural_Lines_One" xml:space="preserve"><value>{0} строка</value></data>
+  <data name="Plural_Lines_Few" xml:space="preserve"><value>{0} строки</value></data>
+  <data name="Plural_Lines_Many" xml:space="preserve"><value>{0} строк</value></data>
+  <data name="Plural_NoAnswer_One" xml:space="preserve"><value>Без ответа: {0}.</value></data>
+  <data name="Plural_NoAnswer_Few" xml:space="preserve"><value>Без ответа: {0}.</value></data>
+  <data name="Plural_NoAnswer_Many" xml:space="preserve"><value>Без ответа: {0}.</value></data>
+  <data name="Plural_NotInCatalog_One" xml:space="preserve"><value>нет в каталоге: {0}</value></data>
+  <data name="Plural_NotInCatalog_Few" xml:space="preserve"><value>нет в каталоге: {0}</value></data>
+  <data name="Plural_NotInCatalog_Many" xml:space="preserve"><value>нет в каталоге: {0}</value></data>
+  <data name="Plural_OtherItems_One" xml:space="preserve"><value>ещё {0} пункт</value></data>
+  <data name="Plural_OtherItems_Few" xml:space="preserve"><value>ещё {0} пункта</value></data>
+  <data name="Plural_OtherItems_Many" xml:space="preserve"><value>ещё {0} пунктов</value></data>
+  <data name="Plural_Plugins_One" xml:space="preserve"><value>{0} плагин</value></data>
+  <data name="Plural_Plugins_Few" xml:space="preserve"><value>{0} плагина</value></data>
+  <data name="Plural_Plugins_Many" xml:space="preserve"><value>{0} плагинов</value></data>
+  <data name="Plural_SmallRequests_One" xml:space="preserve"><value>{0} небольшой запрос</value></data>
+  <data name="Plural_SmallRequests_Few" xml:space="preserve"><value>{0} небольших запроса</value></data>
+  <data name="Plural_SmallRequests_Many" xml:space="preserve"><value>{0} небольших запросов</value></data>
+  <data name="Plural_Vaults_One" xml:space="preserve"><value>{0} хранилище</value></data>
+  <data name="Plural_Vaults_Few" xml:space="preserve"><value>{0} хранилища</value></data>
+  <data name="Plural_Vaults_Many" xml:space="preserve"><value>{0} хранилищ</value></data>
+</root>

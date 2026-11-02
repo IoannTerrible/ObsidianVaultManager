@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.LogView"
+             x:DataType="vm:LogViewModel">
+  <Border Background="{DynamicResource Brush.Well}" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,1,0,0">
+    <StackPanel>
+      <!-- One button stays in place whichever way the log is, so keyboard focus survives the toggle. -->
+      <Button Name="Toggle" Theme="{StaticResource RowButton}" Height="28" Command="{Binding ToggleCommand}" ToolTip.Tip="{Binding ToggleTip}" AutomationProperties.Name="{Binding ToggleTip}">
+        <Grid ColumnDefinitions="*,Auto" Margin="16,0,12,0">
+          <Grid ColumnDefinitions="Auto,*" IsVisible="{Binding ShowLatest}">
+            <TextBlock Classes="value dim" Text="{Binding LatestTime}" Margin="0,0,10,0" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" Classes="value soft" Classes.match="{Binding LatestIsOk}" Classes.blocked="{Binding LatestIsProblem}" Text="{Binding LatestText}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+          </Grid>
+          <TextBlock Classes="cap" Text="{l:Caps Log_Caption}" IsVisible="{Binding IsExpanded}" />
+          <Panel Grid.Column="1" Width="14" Margin="8,0,0,0" VerticalAlignment="Center">
+            <Path Data="M1,7 L5,2 9,7" Stroke="{DynamicResource Brush.Dim}" StrokeThickness="1.5" IsVisible="{Binding ShowLatest}" />
+            <Path Data="M1,2 L5,7 9,2" Stroke="{DynamicResource Brush.Dim}" StrokeThickness="1.5" IsVisible="{Binding IsExpanded}" />
+          </Panel>
+        </Grid>
+      </Button>
+      <ScrollViewer Name="Scroller" Height="76" IsVisible="{Binding IsExpanded}">
+        <ItemsControl ItemsSource="{Binding Entries}" Margin="16,0,16,6">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:LogEntry">
+              <Grid ColumnDefinitions="Auto,*">
+                <TextBlock Classes="value dim" Text="{Binding Time}" Margin="0,0,10,0" VerticalAlignment="Top" />
+                <TextBlock Grid.Column="1" Classes="value soft" Classes.match="{Binding IsOk}" Classes.blocked="{Binding IsProblem}" Text="{Binding Text}" TextWrapping="Wrap" />
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+    </StackPanel>
+  </Border>
+</UserControl>

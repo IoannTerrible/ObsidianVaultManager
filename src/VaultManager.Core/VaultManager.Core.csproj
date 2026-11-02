@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks Condition="'$(RuntimeIdentifier)' == ''">net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
+    <!-- A publish for a runtime is always net10.0. With the full list, its restore would download runtime packs of every framework here. -->
+    <TargetFrameworks Condition="'$(RuntimeIdentifier)' != ''">net10.0</TargetFrameworks>
+    <DisableTransitiveFrameworkReferenceDownloads>true</DisableTransitiveFrameworkReferenceDownloads>
+    <RootNamespace>VaultManager.Core</RootNamespace>
+    <!-- net6.0 is out of support; the build keeps it on purpose (v0.2.0.0). -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="VaultManager.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Profiles\Builtin\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 8.0.x is the last line that still targets net6.0. -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.10" />
+    <!-- Lifts the native SQLite above 2.1.6, which NuGet flags as vulnerable (NU1903). -->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+</Project>

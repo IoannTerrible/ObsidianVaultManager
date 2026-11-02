@@ -1,0 +1,134 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             x:Class="VaultManager.App.App"
+             RequestedThemeVariant="Dark">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://VaultManager/Themes/Basalt.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+
+  <Application.Styles>
+    <FluentTheme />
+
+    <!-- Visible focus everywhere: a sulfur ring, only for keyboard focus. -->
+    <Style Selector=":is(Control)">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderBrush="{DynamicResource Brush.Sulfur}" BorderThickness="2" CornerRadius="{DynamicResource Radius}" />
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
+
+    <Style Selector="Window">
+      <Setter Property="Background" Value="{DynamicResource Brush.Base}" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Text}" />
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Read}" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Body}" />
+    </Style>
+
+    <!-- The three type roles, and the three text weights of the sentence role. -->
+    <Style Selector="TextBlock.cap">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Label}" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Small}" />
+      <Setter Property="LetterSpacing" Value="{DynamicResource Spacing.Caps}" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Dim}" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="TextBlock.value">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Value}" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Small}" />
+    </Style>
+    <Style Selector="TextBlock.medium">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.ReadMedium}" />
+    </Style>
+    <Style Selector="TextBlock.semi">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.ReadSemi}" />
+    </Style>
+    <Style Selector="TextBlock.small">
+      <Setter Property="FontSize" Value="{DynamicResource Size.Small}" />
+    </Style>
+    <Style Selector="TextBlock.title">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.ReadSemi}" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Title}" />
+    </Style>
+    <Style Selector="TextBlock.soft">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Soft}" />
+    </Style>
+    <Style Selector="TextBlock.dim">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Dim}" />
+    </Style>
+    <Style Selector="TextBlock.match">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Match}" />
+    </Style>
+    <Style Selector="TextBlock.drift">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Drift}" />
+    </Style>
+    <Style Selector="TextBlock.blocked">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Blocked}" />
+    </Style>
+    <Style Selector="TextBlock.sulfur">
+      <Setter Property="Foreground" Value="{DynamicResource Brush.Sulfur}" />
+    </Style>
+
+    <!-- Surfaces and repeating parts. -->
+    <Style Selector="Border.plate">
+      <Setter Property="Background" Value="{DynamicResource Brush.Plate}" />
+    </Style>
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource Brush.Plate}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Line}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="{DynamicResource Radius}" />
+      <Setter Property="Padding" Value="14,12" />
+    </Style>
+    <Style Selector="Border.row">
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Line}" />
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+    </Style>
+    <Style Selector="Border.hoverable:pointerover">
+      <Setter Property="Background" Value="{DynamicResource Brush.Hover}" />
+    </Style>
+    <Style Selector="Border.pick">
+      <Setter Property="Background" Value="{DynamicResource Brush.Raised}" />
+    </Style>
+    <Style Selector="Border.badge">
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Edge}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="{DynamicResource Radius}" />
+      <Setter Property="Padding" Value="6,0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Border.tablehead">
+      <Setter Property="Background" Value="{DynamicResource Brush.Plate}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Brush.Line}" />
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+    </Style>
+
+    <Style Selector="CheckBox">
+      <Setter Property="MinHeight" Value="24" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Body}" />
+    </Style>
+    <Style Selector="CheckBox /template/ Grid > Grid">
+      <Setter Property="Height" Value="24" />
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="FontSize" Value="{DynamicResource Size.Body}" />
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Read}" />
+    </Style>
+    <Style Selector="TextBox.value">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Value}" />
+      <Setter Property="FontSize" Value="{DynamicResource Size.Small}" />
+    </Style>
+    <Style Selector="ComboBox">
+      <Setter Property="FontSize" Value="{DynamicResource Size.Body}" />
+      <Setter Property="MinHeight" Value="28" />
+    </Style>
+    <Style Selector="ToolTip">
+      <Setter Property="FontFamily" Value="{DynamicResource Font.Read}" />
+    </Style>
+  </Application.Styles>
+</Application>

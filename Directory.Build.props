@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <Version>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)VERSION').Trim())</Version>
+    <Product>Vault Manager</Product>
+    <Company>Tech Tea Studio</Company>
+    <Copyright>Copyright (c) 2026 Tech Tea Studio</Copyright>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Symbols travel inside the assembly: a published build is one file. -->
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+</Project>

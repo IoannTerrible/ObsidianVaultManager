@@ -1,0 +1,91 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.SettingsSyncView"
+             x:DataType="vm:SettingsSyncViewModel">
+  <Grid RowDefinitions="Auto,*,48" Background="{DynamicResource Brush.Well}">
+    <Border Classes="card" Margin="16,14,16,10">
+      <StackPanel Spacing="8">
+        <Grid ColumnDefinitions="*,14,*,14,Auto">
+          <StackPanel Spacing="3" Grid.ColumnSpan="{Binding SourceSpan}">
+            <TextBlock Classes="cap" Text="{l:Caps Sync_Source}" />
+            <ComboBox ItemsSource="{Binding Sources}" SelectedItem="{Binding Source}" HorizontalAlignment="Stretch" PlaceholderText="{l:T Sync_PickVault}">
+              <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:SyncVaultChoice">
+                  <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
+            </ComboBox>
+          </StackPanel>
+          <StackPanel Grid.Column="2" Spacing="3" IsVisible="{Binding !HasFixedTarget}">
+            <TextBlock Classes="cap" Text="{l:Caps Sync_Target}" />
+            <ComboBox ItemsSource="{Binding Targets}" SelectedItem="{Binding Target}" HorizontalAlignment="Stretch" PlaceholderText="{l:T Sync_PickVault}">
+              <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="vm:SyncVaultChoice">
+                  <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
+            </ComboBox>
+          </StackPanel>
+          <Button Grid.Column="4" Content="{l:T Sync_Compare}" Command="{Binding CompareCommand}" IsEnabled="{Binding CanCompare}" VerticalAlignment="Bottom" />
+        </Grid>
+        <ItemsControl ItemsSource="{Binding Categories}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:SyncCategoryVm">
+              <CheckBox Content="{Binding Label}" IsChecked="{Binding IsOn}" Margin="0,0,14,0" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Classes="small dim" Text="{l:T Sync_OfflineNote}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Border>
+
+    <ScrollViewer Grid.Row="1">
+      <StackPanel Margin="16,0,16,8">
+        <TextBlock Classes="blocked" Text="{Binding Error}" IsVisible="{Binding HasError}" TextWrapping="Wrap" />
+        <TextBlock Classes="soft" Text="{l:T Sync_Hint}" IsVisible="{Binding !Compared}" />
+        <ItemsControl ItemsSource="{Binding Lines}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:SyncLineVm">
+              <Border Classes="row" Padding="0,5">
+                <Grid ColumnDefinitions="24,18,*,Auto">
+                  <CheckBox IsChecked="{Binding IsSelected}" IsVisible="{Binding CanSelect}" MinHeight="16" VerticalAlignment="Top" ToolTip.Tip="{l:T Sync_SelectTip}" />
+                  <c:StateGlyph Grid.Column="1" Kind="{Binding Glyph}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" />
+                  <StackPanel Grid.Column="2">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                      <TextBlock Classes="value" Text="{Binding Path}" VerticalAlignment="Center" />
+                      <TextBlock Classes="small dim" Text="{Binding Category}" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <TextBlock Classes="small soft" Text="{Binding Sentence}" TextWrapping="Wrap" />
+                  </StackPanel>
+                  <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">
+                    <StackPanel Orientation="Horizontal" IsVisible="{Binding IsConflict}">
+                      <ToggleButton Theme="{StaticResource ChipButton}" Classes="left" Content="{l:T Sync_TakeSource}" IsChecked="{Binding TakesSource}" />
+                      <ToggleButton Theme="{StaticResource ChipButton}" Classes="right" Content="{l:T Sync_KeepTarget}" IsChecked="{Binding KeepsTarget}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="5" IsVisible="{Binding IsWaiting}" Margin="8,0,0,0">
+                      <c:StateGlyph Kind="Waiting" />
+                      <TextBlock Classes="small soft" Text="{l:T Status_Waiting}" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </StackPanel>
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </ScrollViewer>
+
+    <Border Grid.Row="2" Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,1,0,0" Padding="16,0">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Classes="soft" Text="{Binding Summary}" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Classes="go" Content="{Binding AddText}" Command="{Binding AddCommand}" IsEnabled="{Binding CanAdd}" />
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

@@ -1,0 +1,163 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:v="clr-namespace:VaultManager.App.Views"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.MainView"
+             x:DataType="vm:ShellViewModel">
+  <Grid RowDefinitions="34,*">
+
+    <!-- Title bar -->
+    <Border Name="TitleBar" Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <StackPanel Orientation="Horizontal" Spacing="8" Margin="12,0,0,0">
+          <Image Source="{DynamicResource Image.Mark}" Width="16" Height="18" VerticalAlignment="Center" />
+          <TextBlock Text="{l:T App_Title}" FontFamily="{DynamicResource Font.Label}" VerticalAlignment="Center" />
+          <TextBlock Classes="value dim" Text="{Binding Version}" VerticalAlignment="Center" />
+          <StackPanel Orientation="Horizontal" Spacing="8" IsVisible="{Binding IsDemo}" VerticalAlignment="Center">
+            <Border Classes="badge">
+              <TextBlock Classes="cap sulfur" Text="{l:Caps Demo_Mark}" />
+            </Border>
+            <Button Theme="{StaticResource LinkButton}" Content="{Binding DemoObsidianText}" Command="{Binding ToggleDemoObsidianCommand}" ToolTip.Tip="{l:T Demo_Toggle}" />
+          </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="4" Margin="0,0,6,0" VerticalAlignment="Center">
+          <Button Name="MinimizeButton" Theme="{StaticResource IconButton}" ToolTip.Tip="{l:T Window_Minimize}">
+            <Path Data="M0,0 L10,0" Stroke="{Binding $parent[Button].Foreground}" StrokeThickness="1.5" Margin="0,8,0,0" />
+          </Button>
+          <Button Name="MaximizeButton" Theme="{StaticResource IconButton}" ToolTip.Tip="{l:T Window_Maximize}">
+            <Path Data="M0.5,0.5 L9.5,0.5 9.5,9.5 0.5,9.5 Z" Stroke="{Binding $parent[Button].Foreground}" StrokeThickness="1.2" />
+          </Button>
+          <Button Name="CloseButton" Theme="{StaticResource IconButton}" ToolTip.Tip="{l:T Window_Close}">
+            <Path Data="M0,0 L10,10 M10,0 L0,10" Stroke="{Binding $parent[Button].Foreground}" StrokeThickness="1.5" />
+          </Button>
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="1" ColumnDefinitions="272,*">
+
+      <!-- Rail: navigation and vaults. The corner panel appears only when something waits, went wrong, or can be undone. -->
+      <Border Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,0,1,0">
+        <Grid RowDefinitions="Auto,Auto,*,Auto">
+          <StackPanel Margin="8" Spacing="2">
+            <c:StateButton Theme="{StaticResource NavButton}" Content="{l:T Nav_Plugins}" IsChecked="{Binding IsPluginsView, Mode=OneWay}" Command="{Binding ShowPluginsCommand}" />
+            <c:StateButton Theme="{StaticResource NavButton}" Content="{l:T Nav_Profiles}" IsChecked="{Binding IsProfilesView, Mode=OneWay}" Command="{Binding ShowProfilesCommand}" />
+          </StackPanel>
+
+          <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="18,6,14,4">
+            <TextBlock Classes="cap" Text="{l:Caps Rail_Vaults}" />
+            <c:StateButton Grid.Column="1" Theme="{StaticResource ChipButton}" BorderThickness="0" MinHeight="20" Padding="4,0" Content="{l:T Rail_NewVault}"
+                           IsChecked="{Binding IsNewVaultView, Mode=OneWay}" Command="{Binding ShowNewVaultCommand}" />
+          </Grid>
+
+          <ScrollViewer Grid.Row="2" Margin="8,0,8,8">
+            <StackPanel Spacing="1">
+              <TextBlock Classes="small dim" Text="{Binding VaultsNote}" IsVisible="{Binding HasVaultsNote}" Margin="10,4" TextWrapping="Wrap" />
+              <ItemsControl ItemsSource="{Binding Vaults}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:VaultRowVm">
+                    <Button Theme="{StaticResource RowButton}" Classes.selected="{Binding IsSelected}" Height="26" CornerRadius="{DynamicResource Radius}"
+                            Command="{Binding OpenCommand}" ToolTip.Tip="{Binding Tip}">
+                      <Panel>
+                        <Border Width="2" HorizontalAlignment="Left" Background="{DynamicResource Brush.Sulfur}" IsVisible="{Binding IsSelected}" />
+                        <Grid ColumnDefinitions="14,*,Auto" Margin="10,0">
+                          <c:StateGlyph Kind="{Binding Glyph}" IsVisible="{Binding HasGlyph}" />
+                          <TextBlock Grid.Column="1" Classes="medium" Text="{Binding Name}" TextTrimming="CharacterEllipsis" Margin="6,0" VerticalAlignment="Center" />
+                          <TextBlock Grid.Column="2" Classes="small dim" Classes.drift="{Binding NoteIsDrift}" Text="{Binding Note}" VerticalAlignment="Center" />
+                        </Grid>
+                      </Panel>
+                    </Button>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </StackPanel>
+          </ScrollViewer>
+
+          <Border Grid.Row="3" BorderBrush="{DynamicResource Brush.Edge}" BorderThickness="0,1,0,0" IsVisible="{Binding Changes.ShowPanel}">
+            <v:ChangesPanel DataContext="{Binding Changes}" />
+          </Border>
+        </Grid>
+      </Border>
+
+      <!-- Main: header 54, content, log strip 28 that opens to 104 on request. -->
+      <Panel Grid.Column="1" Name="MainArea">
+        <Grid RowDefinitions="54,*,Auto">
+          <Border Classes="plate" BorderBrush="{DynamicResource Brush.Line}" BorderThickness="0,0,0,1" Padding="16,0,10,0">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+              <Button Content="{l:T Action_Back}" Command="{Binding BackCommand}" IsVisible="{Binding CanGoBack}" Margin="0,0,12,0" />
+
+              <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding HeadTitle}">
+                  <Run Text="{Binding HeadTitle}" FontFamily="{DynamicResource Font.ReadSemi}" FontSize="{DynamicResource Size.Title}" />
+                  <Run Text=" " />
+                  <Run Text="{Binding HeadTail}" Foreground="{DynamicResource Brush.Soft}" />
+                </TextBlock>
+                <TextBlock Classes="value dim" Text="{Binding HeadSub}" IsVisible="{Binding HasHeadSub}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding HeadSubTip}" />
+              </StackPanel>
+
+              <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center" Margin="16,0,0,0">
+                <TextBlock Classes="small dim" Text="{l:T Head_ScanningShort}" IsVisible="{Binding IsScanning}" VerticalAlignment="Center" />
+                <Button Classes="go" Content="{Binding UpdateAllText}" Command="{Binding UpdateAllCommand}" IsVisible="{Binding ShowUpdateAll}" />
+                <Button Name="AddPluginButton" Content="{l:T Action_AddPlugin}" Command="{Binding Picker.ToggleCommand}" IsVisible="{Binding IsVaultView}" IsEnabled="{Binding VaultPage.CanAdd}" />
+                <Button Content="{l:T Profile_Edit}" Command="{Binding Profiles.EditCommand}" IsVisible="{Binding ShowProfileEdit}" />
+                <Button Content="{l:T Profile_Done}" Command="{Binding Profiles.DoneEditingCommand}" IsVisible="{Binding ShowProfileDone}" />
+                <Button Theme="{StaticResource IconButton}" Command="{Binding RescanCommand}" IsVisible="{Binding ShowRefresh}" IsEnabled="{Binding !IsScanning}"
+                        ToolTip.Tip="{Binding ScanTip}" AutomationProperties.Name="{l:T Head_Rescan}">
+                  <Path Data="M11,6.5 A4.75,4.75 0 1 1 9.4,2.7 M9.8,0.2 L9.6,3 L6.8,2.8" Stroke="{Binding $parent[Button].Foreground}" StrokeThickness="1.4" />
+                </Button>
+                <Button Name="MenuButton" Theme="{StaticResource IconButton}" Command="{Binding ToggleMenuCommand}" IsVisible="{Binding HasMenu}"
+                        ToolTip.Tip="{l:T Menu_More}" AutomationProperties.Name="{l:T Menu_More}">
+                  <Path Data="M1,5 h2 v2 h-2 z M6,5 h2 v2 h-2 z M11,5 h2 v2 h-2 z" Fill="{Binding $parent[Button].Foreground}" />
+                </Button>
+              </StackPanel>
+            </Grid>
+          </Border>
+
+          <Panel Grid.Row="1" Background="{DynamicResource Brush.Well}">
+            <Panel IsVisible="{Binding ShowAttentionList}"><v:AttentionView DataContext="{Binding Attention}" /></Panel>
+            <Panel IsVisible="{Binding ShowMatrix}"><v:MatrixView DataContext="{Binding Matrix}" /></Panel>
+            <Panel IsVisible="{Binding IsVaultView}"><v:VaultPageView DataContext="{Binding VaultPage}" /></Panel>
+            <Panel IsVisible="{Binding IsProfilesView}"><v:ProfilesView DataContext="{Binding Profiles}" /></Panel>
+            <Panel IsVisible="{Binding IsNewVaultView}"><v:NewVaultView DataContext="{Binding NewVault}" /></Panel>
+            <Panel IsVisible="{Binding IsSettingsView}"><v:SettingsSyncView DataContext="{Binding Settings}" /></Panel>
+
+            <StackPanel IsVisible="{Binding ShowEmpty}" Margin="16,20" Spacing="10" HorizontalAlignment="Left">
+              <TextBlock Text="{Binding EmptyTitle}" TextWrapping="Wrap" MaxWidth="560" />
+              <Button Content="{l:T Empty_AddFolder}" Command="{Binding AddFolderCommand}" IsVisible="{Binding EmptyCanAddFolder}" HorizontalAlignment="Left" />
+              <Button Content="{l:T Empty_TryAgain}" Command="{Binding RescanCommand}" IsVisible="{Binding EmptyCanRetry}" HorizontalAlignment="Left" />
+            </StackPanel>
+          </Panel>
+
+          <v:LogView Grid.Row="2" DataContext="{Binding Log}" />
+        </Grid>
+
+        <Panel Name="Picker" IsVisible="{Binding Picker.IsOpen}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,58,16,0" Width="400" Height="372">
+          <v:PickerView DataContext="{Binding Picker}" />
+        </Panel>
+        <Panel IsVisible="{Binding Online.IsOpen}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,58,16,0" Width="440">
+          <v:OnlineQuestionView DataContext="{Binding Online}" />
+        </Panel>
+
+        <!-- The three dots: everything that is not needed at a glance. -->
+        <Border Name="Menu" Classes="plate" IsVisible="{Binding IsMenuOpen}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" MinWidth="200"
+                BorderBrush="{DynamicResource Brush.Edge}" BorderThickness="1" CornerRadius="{DynamicResource Radius}" Padding="4">
+          <ItemsControl Name="MenuList" ItemsSource="{Binding MenuItems}" KeyboardNavigation.TabNavigation="Cycle">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate x:DataType="vm:MenuItemVm">
+                <Button Theme="{StaticResource RowButton}" Height="28" CornerRadius="{DynamicResource Radius}" Command="{Binding InvokeCommand}" IsEnabled="{Binding IsEnabled}">
+                  <Grid ColumnDefinitions="16,*" Margin="6,0,10,0">
+                    <c:StateGlyph Kind="Selection" IsVisible="{Binding IsCurrent}" />
+                    <TextBlock Grid.Column="1" Text="{Binding Text}" VerticalAlignment="Center" />
+                  </Grid>
+                </Button>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Border>
+      </Panel>
+    </Grid>
+  </Grid>
+</UserControl>

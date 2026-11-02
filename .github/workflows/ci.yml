@@ -17,8 +17,29 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
 jobs:
+  test:
+    name: Test on Windows
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Test
+        run: >
+          dotnet test tests/VaultManager.Tests/VaultManager.Tests.csproj
+          -c Release
+          -nologo
+          -v:minimal
+
   build:
-    name: ${{ matrix.tfm }}
+    name: Build ${{ matrix.tfm }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     strategy:
@@ -38,16 +59,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .NET ${{ matrix.sdk }}
+      # The sources use C# 12, so net6.0 and the others still need a current compiler.
+      - name: Setup .NET ${{ matrix.sdk }} and 10
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ matrix.sdk }}
-          cache: true
-          cache-dependency-path: ObsidianScanner/ObsidianScanner.csproj
+          dotnet-version: |
+            ${{ matrix.sdk }}
+            10.0.x
 
       - name: Build ${{ matrix.tfm }}
         run: >
-          dotnet build ObsidianScanner/ObsidianScanner.csproj
+          dotnet build src/VaultManager.App/VaultManager.App.csproj
           -c Release
           -f ${{ matrix.tfm }}
           -nologo

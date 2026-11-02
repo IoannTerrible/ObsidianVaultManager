@@ -1,0 +1,558 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:l="clr-namespace:VaultManager.App.Localization">
+  <!--
+    Basalt: the one file that holds every colour, radius and font of Vault Manager.
+    Two surfaces only: plate stands out of the window, well is cut into it.
+    Colour is meaning: sulfur is selection and the single main action; match, drift, blocked and info are state.
+  -->
+
+  <!-- Colours -->
+  <Color x:Key="Color.Base">#101214</Color>
+  <Color x:Key="Color.Well">#0A0B0D</Color>
+  <Color x:Key="Color.Plate">#181B1E</Color>
+  <Color x:Key="Color.Raised">#23272B</Color>
+  <Color x:Key="Color.Line">#2C3136</Color>
+  <Color x:Key="Color.Edge">#60676E</Color>
+  <Color x:Key="Color.Text">#E7E5DC</Color>
+  <Color x:Key="Color.Soft">#AEAEA4</Color>
+  <Color x:Key="Color.Dim">#90918A</Color>
+  <Color x:Key="Color.Sulfur">#E2C13F</Color>
+  <Color x:Key="Color.SulfurHover">#EDD05A</Color>
+  <Color x:Key="Color.OnSulfur">#17150A</Color>
+  <Color x:Key="Color.Match">#7DB56A</Color>
+  <Color x:Key="Color.Drift">#E5904F</Color>
+  <Color x:Key="Color.Blocked">#E86A5B</Color>
+  <Color x:Key="Color.Info">#7FB2C9</Color>
+  <Color x:Key="Color.Hover">#1F2327</Color>
+  <Color x:Key="Color.Mark">#454B51</Color>
+  <Color x:Key="Color.Transparent">#00000000</Color>
+
+  <SolidColorBrush x:Key="Brush.Base" Color="{StaticResource Color.Base}" />
+  <SolidColorBrush x:Key="Brush.Well" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="Brush.Plate" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="Brush.Raised" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="Brush.Line" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="Brush.Edge" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="Brush.Text" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="Brush.Soft" Color="{StaticResource Color.Soft}" />
+  <SolidColorBrush x:Key="Brush.Dim" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="Brush.Sulfur" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="Brush.SulfurHover" Color="{StaticResource Color.SulfurHover}" />
+  <SolidColorBrush x:Key="Brush.OnSulfur" Color="{StaticResource Color.OnSulfur}" />
+  <SolidColorBrush x:Key="Brush.Match" Color="{StaticResource Color.Match}" />
+  <SolidColorBrush x:Key="Brush.Drift" Color="{StaticResource Color.Drift}" />
+  <SolidColorBrush x:Key="Brush.Blocked" Color="{StaticResource Color.Blocked}" />
+  <SolidColorBrush x:Key="Brush.Info" Color="{StaticResource Color.Info}" />
+  <SolidColorBrush x:Key="Brush.Hover" Color="{StaticResource Color.Hover}" />
+  <SolidColorBrush x:Key="Brush.Mark" Color="{StaticResource Color.Mark}" />
+  <SolidColorBrush x:Key="Brush.Transparent" Color="{StaticResource Color.Transparent}" />
+
+  <!-- Shape -->
+  <CornerRadius x:Key="Radius">4</CornerRadius>
+  <CornerRadius x:Key="Radius.Left">4,0,0,4</CornerRadius>
+  <CornerRadius x:Key="Radius.Right">0,4,4,0</CornerRadius>
+  <CornerRadius x:Key="Radius.None">0</CornerRadius>
+
+  <!-- Type: three roles. Condensed caps names parts of the window, monospace shows values, sans is for sentences. -->
+  <FontFamily x:Key="Font.Read">avares://VaultManager/Assets/Fonts#IBM Plex Sans</FontFamily>
+  <FontFamily x:Key="Font.ReadMedium">avares://VaultManager/Assets/Fonts#IBM Plex Sans Medm</FontFamily>
+  <FontFamily x:Key="Font.ReadSemi">avares://VaultManager/Assets/Fonts#IBM Plex Sans SmBld</FontFamily>
+  <FontFamily x:Key="Font.Label">avares://VaultManager/Assets/Fonts#IBM Plex Sans Cond SmBld</FontFamily>
+  <FontFamily x:Key="Font.Value">avares://VaultManager/Assets/Fonts#JetBrains Mono</FontFamily>
+  <x:Double x:Key="Size.Small">12</x:Double>
+  <x:Double x:Key="Size.Body">13</x:Double>
+  <x:Double x:Key="Size.Title">16</x:Double>
+  <x:Double x:Key="Spacing.Caps">0.96</x:Double>
+
+  <!-- The mark in the title bar, the same stone as the app icon idea: basalt with one sulfur facet. -->
+  <DrawingImage x:Key="Image.Mark">
+    <DrawingGroup>
+      <GeometryDrawing Brush="{StaticResource Brush.Line}" Geometry="M8,0 L15,5 13,15 6,18 1,11 3,4 Z" />
+      <GeometryDrawing Brush="{StaticResource Brush.Mark}" Geometry="M8,0 L3,4 6,9 Z" />
+      <GeometryDrawing Brush="{StaticResource Brush.Edge}" Geometry="M8,0 L15,5 6,9 Z" />
+      <GeometryDrawing Brush="{StaticResource Brush.Raised}" Geometry="M6,9 L15,5 13,15 Z" />
+      <GeometryDrawing Brush="{StaticResource Brush.Sulfur}" Geometry="M6,9 L13,15 6,18 Z" />
+    </DrawingGroup>
+  </DrawingImage>
+
+  <!-- Fluent keys: controls that keep their Fluent template wear Basalt through these. -->
+  <Color x:Key="SystemAccentColor">#E2C13F</Color>
+  <Color x:Key="SystemAccentColorLight1">#EDD05A</Color>
+  <Color x:Key="SystemAccentColorLight2">#EDD05A</Color>
+  <Color x:Key="SystemAccentColorLight3">#EDD05A</Color>
+  <Color x:Key="SystemAccentColorDark1">#E2C13F</Color>
+  <Color x:Key="SystemAccentColorDark2">#E2C13F</Color>
+  <Color x:Key="SystemAccentColorDark3">#E2C13F</Color>
+  <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
+  <CornerRadius x:Key="OverlayCornerRadius">4</CornerRadius>
+  <FontFamily x:Key="ContentControlThemeFontFamily">avares://VaultManager/Assets/Fonts#IBM Plex Sans</FontFamily>
+  <x:Double x:Key="ControlContentThemeFontSize">13</x:Double>
+  <x:Double x:Key="ContentControlFontSize">13</x:Double>
+
+  <x:Double x:Key="TextControlThemeMinHeight">28</x:Double>
+  <Thickness x:Key="TextControlThemePadding">8,4,8,4</Thickness>
+  <Thickness x:Key="TextControlBorderThemeThickness">1</Thickness>
+  <Thickness x:Key="TextControlBorderThemeThicknessFocused">1</Thickness>
+  <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="TextControlForegroundFocused" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="TextControlForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="TextControlBorderBrush" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="TextControlBorderBrushDisabled" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="TextControlPlaceholderForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="TextControlSelectionHighlightColor" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="TextOnAccentFillColorSelectedTextBrush" Color="{StaticResource Color.OnSulfur}" />
+
+  <x:Double x:Key="ComboBoxMinHeight">28</x:Double>
+  <Thickness x:Key="ComboBoxPadding">8,3,0,3</Thickness>
+  <SolidColorBrush x:Key="ComboBoxBackground" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="ComboBoxBackgroundPressed" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="ComboBoxBackgroundDisabled" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="ComboBoxBackgroundFocused" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="ComboBoxBackgroundUnfocused" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrushPressed" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrushDisabled" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrushFocused" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="ComboBoxBorderBrushUnfocused" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="ComboBoxForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxForegroundPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxForegroundPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxForegroundFocused" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxForegroundFocusedPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundPointerOver" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundPressed" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundFocused" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownBackgroundPointerOver" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownBackgroundPointerPressed" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource Color.Soft}" />
+  <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxItemForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundSelected" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPointerOver" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPressed" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackground" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundPointerOver" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundPressed" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPointerOver" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPressed" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrush" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrushPointerOver" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrushPressed" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelected" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPointerOver" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPressed" Color="{StaticResource Color.Transparent}" />
+
+  <SolidColorBrush x:Key="CheckBoxForegroundUnchecked" Color="{StaticResource Color.Soft}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundUncheckedDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundChecked" Color="{StaticResource Color.Soft}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundCheckedPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundCheckedPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundCheckedDisabled" Color="{StaticResource Color.Dim}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPressed" Color="{StaticResource Color.Well}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedDisabled" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" Color="{StaticResource Color.SulfurHover}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedDisabled" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUnchecked" Color="{StaticResource Color.Edge}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedDisabled" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" Color="{StaticResource Color.SulfurHover}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" Color="{StaticResource Color.Sulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedDisabled" Color="{StaticResource Color.Line}" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked" Color="{StaticResource Color.OnSulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver" Color="{StaticResource Color.OnSulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPressed" Color="{StaticResource Color.OnSulfur}" />
+  <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedDisabled" Color="{StaticResource Color.Dim}" />
+
+  <SolidColorBrush x:Key="ToolTipBackground" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="ToolTipForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="ToolTipBorderBrush" Color="{StaticResource Color.Edge}" />
+  <Thickness x:Key="ToolTipBorderThemeThickness">1</Thickness>
+  <Thickness x:Key="ToolTipBorderThemePadding">8,4,8,4</Thickness>
+  <x:Double x:Key="ToolTipContentThemeFontSize">12</x:Double>
+
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource Color.Plate}" />
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="{StaticResource Color.Edge}" />
+  <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
+  <SolidColorBrush x:Key="MenuFlyoutItemBackground" Color="{StaticResource Color.Transparent}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPointerOver" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPressed" Color="{StaticResource Color.Raised}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemForeground" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemForegroundPointerOver" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemForegroundPressed" Color="{StaticResource Color.Text}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled" Color="{StaticResource Color.Dim}" />
+
+  <!-- Buttons. The face is caps by role. -->
+  <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.Edge}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="{StaticResource Radius}" />
+    <Setter Property="Padding" Value="10,3" />
+    <Setter Property="MinHeight" Value="26" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Label}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Small}" />
+    <Setter Property="TextBlock.LetterSpacing" Value="{StaticResource Spacing.Caps}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
+                          Padding="{TemplateBinding Padding}"
+                          Content="{TemplateBinding Content, Converter={x:Static l:CapsConverter.Instance}}"
+                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Foreground="{TemplateBinding Foreground}"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+    </Style>
+    <Style Selector="^:pressed">
+      <Setter Property="Background" Value="{StaticResource Brush.Line}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Line}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+      <Setter Property="Cursor" Value="Arrow" />
+    </Style>
+    <Style Selector="^.go">
+      <Setter Property="Background" Value="{StaticResource Brush.Sulfur}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Sulfur}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.OnSulfur}" />
+    </Style>
+    <Style Selector="^.go:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.SulfurHover}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.SulfurHover}" />
+    </Style>
+    <Style Selector="^.go:pressed">
+      <Setter Property="Background" Value="{StaticResource Brush.Sulfur}" />
+    </Style>
+    <Style Selector="^.go:disabled">
+      <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Line}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+    </Style>
+    <Style Selector="^.quiet">
+      <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Transparent}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Soft}" />
+    </Style>
+    <Style Selector="^.quiet:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    </Style>
+    <Style Selector="^.tight">
+      <Setter Property="Padding" Value="8,1" />
+      <Setter Property="MinHeight" Value="22" />
+    </Style>
+  </ControlTheme>
+
+  <!-- A left-rail section: caps, and a sulfur edge on the current one. -->
+  <ControlTheme x:Key="NavButton" TargetType="ToggleButton">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Soft}" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Label}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Body}" />
+    <Setter Property="TextBlock.LetterSpacing" Value="{StaticResource Spacing.Caps}" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="Height" Value="30" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="{TemplateBinding Background}" CornerRadius="{StaticResource Radius}">
+          <Panel>
+            <Border Name="Edge" Width="2" HorizontalAlignment="Left" Background="{StaticResource Brush.Sulfur}" IsVisible="False" />
+            <ContentPresenter Name="PART_ContentPresenter" Padding="10,0" VerticalAlignment="Center"
+                              Content="{TemplateBinding Content, Converter={x:Static l:CapsConverter.Instance}}"
+                              Foreground="{TemplateBinding Foreground}" />
+          </Panel>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    </Style>
+    <Style Selector="^:checked">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Sulfur}" />
+    </Style>
+    <Style Selector="^:checked /template/ Border#Edge">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+  </ControlTheme>
+
+  <!-- A two-way switch in a header: pressed side reads sulfur. -->
+  <ControlTheme x:Key="ChipButton" TargetType="ToggleButton">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Soft}" />
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.Edge}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="{StaticResource Radius}" />
+    <Setter Property="Padding" Value="10,3" />
+    <Setter Property="MinHeight" Value="26" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Label}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Small}" />
+    <Setter Property="TextBlock.LetterSpacing" Value="0.72" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
+                          Padding="{TemplateBinding Padding}"
+                          Content="{TemplateBinding Content, Converter={x:Static l:CapsConverter.Instance}}"
+                          Foreground="{TemplateBinding Foreground}"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    </Style>
+    <Style Selector="^:checked">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+      <Setter Property="Foreground" Value="{StaticResource Brush.Sulfur}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Line}" />
+    </Style>
+    <Style Selector="^.left">
+      <Setter Property="CornerRadius" Value="{StaticResource Radius.Left}" />
+    </Style>
+    <Style Selector="^.right">
+      <Setter Property="CornerRadius" Value="{StaticResource Radius.Right}" />
+      <Setter Property="Margin" Value="-1,0,0,0" />
+    </Style>
+  </ControlTheme>
+
+  <!-- A word that acts: sentence case, underlined, inside running text. -->
+  <ControlTheme x:Key="LinkButton" TargetType="Button">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Soft}" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Read}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Small}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Background="{TemplateBinding Background}" TextDecorations="Underline" Padding="{TemplateBinding Padding}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+    </Style>
+  </ControlTheme>
+
+  <!-- A square button for one glyph, such as the close and remove crosses. -->
+  <ControlTheme x:Key="IconButton" TargetType="Button">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+    <Setter Property="Width" Value="24" />
+    <Setter Property="Height" Value="24" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Value}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Small}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter" Background="{TemplateBinding Background}" CornerRadius="{StaticResource Radius}"
+                          Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"
+                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Line}" />
+    </Style>
+  </ControlTheme>
+
+  <!-- A whole row that acts: vault in the rail, plugin name in the table. No face, content decides. -->
+  <ControlTheme x:Key="RowButton" TargetType="Button">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Text}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}"
+                          Padding="{TemplateBinding Padding}"
+                          Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Foreground="{TemplateBinding Foreground}"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Hover}" />
+    </Style>
+    <Style Selector="^.selected">
+      <Setter Property="Background" Value="{StaticResource Brush.Raised}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+    </Style>
+  </ControlTheme>
+
+  <!-- An empty table cell: a dot at rest, "+ Add" on pointer over and on keyboard focus. -->
+  <ControlTheme x:Key="AddCellButton" TargetType="Button">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Foreground" Value="{StaticResource Brush.Dim}" />
+    <Setter Property="FontFamily" Value="{StaticResource Font.Value}" />
+    <Setter Property="FontSize" Value="{StaticResource Size.Small}" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel Background="{TemplateBinding Background}">
+          <TextBlock Name="Dot" Text="·" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+          <TextBlock Name="Word" Text="{TemplateBinding Content}" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource Brush.Text}" IsVisible="False" />
+        </Panel>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover /template/ TextBlock#Dot">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="^:pointerover /template/ TextBlock#Word">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="^:focus /template/ TextBlock#Dot">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="^:focus /template/ TextBlock#Word">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+  </ControlTheme>
+
+  <!-- Scrolling: a bar beside the content, thin, with no arrows. Content never slides under it. -->
+  <ControlTheme x:Key="{x:Type Thumb}" TargetType="Thumb">
+    <Setter Property="Background" Value="{StaticResource Brush.Edge}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="{TemplateBinding Background}" CornerRadius="{StaticResource Radius}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{StaticResource Brush.Soft}" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="ScrollPageButton" TargetType="RepeatButton">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="{TemplateBinding Background}" />
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
+    <Setter Property="Cursor" Value="Arrow" />
+    <Style Selector="^:vertical">
+      <Setter Property="Width" Value="8" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Track Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                 Value="{TemplateBinding Value, Mode=TwoWay}" ViewportSize="{TemplateBinding ViewportSize}"
+                 Orientation="{TemplateBinding Orientation}" IsDirectionReversed="True">
+            <Track.DecreaseButton>
+              <RepeatButton Name="PART_PageUpButton" Theme="{StaticResource ScrollPageButton}" />
+            </Track.DecreaseButton>
+            <Track.IncreaseButton>
+              <RepeatButton Name="PART_PageDownButton" Theme="{StaticResource ScrollPageButton}" />
+            </Track.IncreaseButton>
+            <Thumb Margin="2,0" MinHeight="24" />
+          </Track>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="^:horizontal">
+      <Setter Property="Height" Value="8" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Track Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                 Value="{TemplateBinding Value, Mode=TwoWay}" ViewportSize="{TemplateBinding ViewportSize}"
+                 Orientation="{TemplateBinding Orientation}">
+            <Track.DecreaseButton>
+              <RepeatButton Name="PART_PageUpButton" Theme="{StaticResource ScrollPageButton}" />
+            </Track.DecreaseButton>
+            <Track.IncreaseButton>
+              <RepeatButton Name="PART_PageDownButton" Theme="{StaticResource ScrollPageButton}" />
+            </Track.IncreaseButton>
+            <Thumb Margin="0,2" MinWidth="24" />
+          </Track>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
+    <Setter Property="Background" Value="{StaticResource Brush.Transparent}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+          <ScrollContentPresenter Name="PART_ContentPresenter" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" />
+          <ScrollBar Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" />
+          <ScrollBar Name="PART_VerticalScrollBar" Orientation="Vertical" Grid.Column="1" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+</ResourceDictionary>

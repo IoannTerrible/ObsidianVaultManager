@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:VaultManager.App.ViewModels"
+             xmlns:c="clr-namespace:VaultManager.App.Controls"
+             xmlns:l="clr-namespace:VaultManager.App.Localization"
+             x:Class="VaultManager.App.Views.ChangesPanel"
+             x:DataType="vm:ChangesViewModel"
+             Background="{DynamicResource Brush.Transparent}">
+  <StackPanel Margin="18,8" Spacing="4">
+    <Grid ColumnDefinitions="16,*" IsVisible="{Binding IsRunning}">
+      <c:StateGlyph Kind="Waiting" HorizontalAlignment="Left" />
+      <TextBlock Grid.Column="1" Classes="small soft" Text="{Binding RunText}" VerticalAlignment="Center" />
+    </Grid>
+
+    <ScrollViewer MaxHeight="220" Margin="0,0,-10,0">
+      <ItemsControl ItemsSource="{Binding Lines}" Margin="0,0,10,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate x:DataType="vm:ChangeLineVm">
+            <Border Classes="row" Padding="0,2">
+              <Grid ColumnDefinitions="16,*,24">
+                <c:StateGlyph Kind="{Binding Glyph}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" />
+                <StackPanel Grid.Column="1">
+                  <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                  <TextBlock Classes="small soft" Text="{Binding Reason}" TextWrapping="Wrap" />
+                  <Button Classes="tight" Margin="0,3,0,1" HorizontalAlignment="Left" Content="{l:T Changes_Retry}" Command="{Binding RetryCommand}" IsVisible="{Binding CanRetry}" />
+                </StackPanel>
+                <Button Grid.Column="2" Theme="{StaticResource IconButton}" Content="×" VerticalAlignment="Top" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}"
+                        ToolTip.Tip="{l:T Changes_Remove}" AutomationProperties.Name="{l:T Changes_Remove}" />
+              </Grid>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+
+    <Grid ColumnDefinitions="*,Auto" IsVisible="{Binding ShowUndo}">
+      <TextBlock Classes="small soft" Text="{Binding UndoText}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+      <Button Grid.Column="1" Classes="tight" Margin="8,0,0,0" Content="{l:T Undo_Button}" Command="{Binding UndoCommand}" IsEnabled="{Binding CanUndo}" />
+    </Grid>
+    <TextBlock Classes="small drift" Text="{Binding UndoProblem}" IsVisible="{Binding HasUndoProblem}" TextWrapping="Wrap" />
+  </StackPanel>
+</UserControl>

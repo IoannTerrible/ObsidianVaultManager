@@ -1,76 +1,80 @@
-# Obsidian Plugin Manager
+# Vault Manager
 
-The app helps you manage your community plugins across multiple vaults from one place.
+Manage Obsidian across all your vaults from one window, with Obsidian closed if you like. See which plugins differ between vaults, bring them in line, set up new vaults from a profile, and undo what you did. Nothing needs installing into a vault.
 
-![interface](images/main.png)
+![Vault Manager, showing what needs attention across vaults](images/main.png)
 
-## Features
+## What it does
 
-1. **Discover vaults and plugins** - Vaults come from the Obsidian desktop app’s config (`%APPDATA%\Obsidian\obsidian.json`). The app builds a single list of **unique** community plugins by combining what each vault has enabled on disk (`community-plugins.json`) and what appears under each vault’s `.obsidian/plugins` folder (including folders without a manifest).
+- **Shows what needs attention.** Plugins that differ between vaults, vaults with plugins turned off, gaps against a profile, and the same plugin version with different files, which can be a warning sign.
+- **Copies before it downloads.** A plugin that exists in another vault comes from there, with no traffic. Downloads from the official catalog happen only on a click, and the size is shown first.
+- **Updates in one click, and takes it back in one.** A copy is saved before anything is written, and Undo works after a restart.
+- **Keeps your settings.** An update leaves a plugin's settings alone. Settings holding a key or a token do not travel to other vaults.
+- **Leaves open vaults alone.** Changes for an open vault wait until you close it, and changes for an unplugged drive wait for the drive. Then they finish by themselves, even after a restart of the app.
+- **Profiles.** A profile is a plain file with plugins, folders, templates and settings. Create, edit, import and export them, check a vault against one, or create a new vault from one.
+- **Settings sync.** Copy hotkeys, appearance, editor and plugin settings between vaults. It compares against the last time two vaults agreed, so it knows who changed what and asks only when both did.
 
-2. **Activate and deactivate per vault** - For a chosen plugin you can turn it **on** for a vault (copy plugin files when needed, then add it to that vault’s enabled list) or **off** (remove it from the enabled list; files on disk are left as-is).
+## When not to use it
 
-3. **Plugin details** - For each plugin you see name, id, version, author, and description (from the plugin manifest when available).
-
-4. **Status per vault** - For every vault you see whether the plugin is **installed** (folder present), **listed** as enabled in that vault’s config, and whether Obsidian will actually **run** it. If the vault is in **Restricted mode**, listed plugins still won’t load until you change that in Obsidian’s settings.
-
-5. **Vault location** - Each row shows the vault’s folder path so you know exactly which vault you’re acting on.
-
-6. **Bulk actions** - Tick several vaults and **activate** them in one go when they’re eligible.
-
-7. **Optional plugin data** - When activating, you can choose to bring over the plugin’s `data.json` from another vault when that data exists (useful for settings-backed plugins).
-
-8. **Search vaults** - Narrow the vault list by typing a **prefix** that matches the **start** of a word in the vault name or path (not arbitrary substrings in the middle of a word). Words are split sensibly along path separators and common name boundaries.
-
-9. **Vault order** - Vaults where the plugin is **not** yet installed are listed first; then vaults that already have it. Within each group, names are sorted alphabetically.
-
-10. **Refresh** - Rescan everything from disk; the UI shows when the data was last refreshed.
-
-## Requirements
-
-Obsidian for **desktop**, with at least one vault registered so Obsidian has written its vault list. The app is a small **Windows** desktop UI (Avalonia); running on other OSes would require building for those targets.
-
-## Safety
-
-Prefer trying activate/deactivate on a **copy** of a vault first. The app edits `community-plugins.json` and may copy files under `.obsidian/plugins`.
+- To sync notes between devices. Use Obsidian Sync or Git.
+- On a phone. It is a Windows desktop app.
+- If you want plugins managed from inside Obsidian, try [Extension Hub](https://community.obsidian.md/plugins/extension-hub) or [Vault Extension Sync](https://community.obsidian.md/plugins/vault-plugin-sync).
 
 ## Download
 
-Grab the latest self-contained **Windows x64** single-file executable from the [Releases page](https://github.com/IoannTerrible/ObsidianVaultManager/releases). No .NET runtime install needed — just double-click `ObsidianVaultManager-vX.Y.Z.W-win-x64.exe`.
+Get the self-contained Windows x64 exe from the [Releases page](https://github.com/IoannTerrible/ObsidianVaultManager/releases). No .NET install is needed.
 
-## Build and run
-
-The project multi-targets **.NET 6 / 8 / 9 / 10**. Any installed SDK from that range is enough — `dotnet` will pick the matching TFM for you.
+Try it without touching anything:
 
 ```bash
-dotnet build ObsidianScanner/ObsidianScanner.csproj
-dotnet run --project ObsidianScanner/ObsidianScanner.csproj
+VaultManager-v0.6.0.0-win-x64.exe --demo
 ```
 
-To build only one TFM (e.g. when you have a single SDK installed):
+The demo runs on a throwaway set of vaults and uses no network.
+
+## Where things live
+
+| What | Where |
+| :-- | :-- |
+| Vault list | Read from `%APPDATA%\obsidian\obsidian.json` |
+| Profiles | `%LOCALAPPDATA%\TechTeaStudio\VaultManager\profiles` |
+| Journal, undo, decisions | `%LOCALAPPDATA%\TechTeaStudio\VaultManager\vault-manager.db` |
+| Saved copies for undo | `%LOCALAPPDATA%\TechTeaStudio\VaultManager\snapshots`, the last 20 operations |
+
+Nothing of the app's own is kept inside a vault.
+
+## Network
+
+The app contacts GitHub only when you press **Check online** or install a plugin from the catalog. The first click tells you the catalog size, about 3 MB, before fetching it. No telemetry.
+
+## Build
+
+The project targets .NET 6, 8, 9 and 10. Any of those SDKs will do.
 
 ```bash
-dotnet build ObsidianScanner/ObsidianScanner.csproj -f net8.0
-dotnet run   --project ObsidianScanner/ObsidianScanner.csproj -f net8.0
+dotnet build VaultManager.slnx
 ```
 
-To produce the same self-contained single-file exe the release workflow ships:
+```bash
+dotnet test tests/VaultManager.Tests/VaultManager.Tests.csproj
+```
 
 ```bash
-dotnet publish ObsidianScanner/ObsidianScanner.csproj -c Release -f net10.0 -r win-x64 ^
-  --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true
+dotnet run --project src/VaultManager.App/VaultManager.App.csproj -f net10.0 -- --demo
 ```
 
 ## Release flow
 
-CI/CD lives in `.github/workflows`:
-
-- **`ci.yml`** — runs on every push and PR to `product`; restores and builds all four target frameworks on `windows-latest`.
-- **`release.yml`** — runs when a tag matching `v*` is pushed; publishes a self-contained, compressed single-file `win-x64` executable on `net10.0` and attaches it to a GitHub Release with auto-generated notes. Can also be triggered manually via `workflow_dispatch`.
-
-To cut a release, push a tag from the `product` branch:
+`ci.yml` builds every target and runs the tests on each push and pull request to `product`. `release.yml` publishes the exe when a `v*` tag is pushed:
 
 ```bash
-git tag v0.2.0.0
-git push origin v0.2.0.0
+git tag v0.6.0.0
 ```
+
+```bash
+git push origin v0.6.0.0
+```
+
+## License
+
+See [LICENSE.txt](LICENSE.txt). The embedded IBM Plex and JetBrains Mono fonts are under the SIL Open Font License.
